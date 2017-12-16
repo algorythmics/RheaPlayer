@@ -1,0 +1,139 @@
+#N canvas 58 58 695 325 10;
+#X text 29 -2 Notemin and notemax table is for adjusting individuals
+notes on the piano which they can play minimal volume and maximal volume.
+;
+#X text 31 35 This is the storage for the tables with load and save
+ctls;
+#N canvas 473 90 601 375 init 0;
+#X obj 33 27 loadbang;
+#X obj 34 51 i \$1;
+#X msg 124 33 \; /piano/\$1/notemins resize 128 \; /piano/\$1/notemins
+bounds 0 600 127 0 \; /piano/\$1/notemins xticks 128 2 4 \; /piano/\$1/notemins
+yticks 600 10 5 \; /piano/\$1/notemins xlabel -4 0 8 16 24 32 40 48
+56 64 72 80 88 96 104 112 120 128 \; /piano/\$1/notemins ylabel -4
+0 50 100 150 200 250 300 350 400 450 500 550 600 \;;
+#X msg 89 152 \; /piano/\$1/notemaxs resize 128 \; /piano/\$1/notemaxs
+bounds 0 600 127 0 \; /piano/\$1/notemaxs xticks 128 2 4 \; /piano/\$1/notemaxs
+yticks 600 10 5 \; /piano/\$1/notemaxs xlabel -4 0 8 16 24 32 40 48
+56 64 72 80 88 96 104 112 120 128 \; /piano/\$1/notemaxs ylabel -4
+0 50 100 150 200 250 300 350 400 450 500 550 600 \;;
+#X msg 31 282 \; /piano/\$1/notemins/linear bang \; /piano/\$1/notemaxs/linear
+bang \; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X restore 32 88 pd init;
+#X text 37 59 --- TABLES ---;
+#X obj 34 111 table /piano/\$1/notemins;
+#X obj 33 130 table /piano/\$1/notemaxs;
+#N canvas 64 229 829 337 ctls 1;
+#X msg 29 159 symbol data/;
+#X obj 31 63 r /piano/\$1/notemins/read;
+#X obj 33 268 s /piano/\$1/notemins;
+#X text 40 43 read from path or filename;
+#X obj 28 178 openpanel;
+#X msg 31 206 read \$1;
+#X obj 31 84 route bang path symbol list;
+#X msg 139 118 symbol \$1/\$2;
+#X obj 163 268 print /piano/\$1/notemins;
+#X msg 217 159 symbol data/;
+#X obj 219 84 route bang path symbol list;
+#X msg 316 158 symbol \$1/\$2;
+#X msg 219 206 write \$1;
+#X msg 418 154 symbol data/;
+#X obj 417 173 openpanel;
+#X msg 420 201 read \$1;
+#X obj 420 79 route bang path symbol list;
+#X msg 528 113 symbol \$1/\$2;
+#X msg 606 154 symbol data/;
+#X obj 608 79 route bang path symbol list;
+#X msg 716 113 symbol \$1/\$2;
+#X msg 608 201 write \$1;
+#X obj 608 58 r /piano/\$1/notemaxs/write;
+#X obj 418 266 s /piano/\$1/notemaxs;
+#X obj 552 266 print /piano/\$1/notemaxs;
+#X obj 219 63 r /piano/\$1/notemins/write;
+#X obj 420 58 r /piano/\$1/notemaxs/read;
+#X obj 216 178 savepanel;
+#X obj 605 173 savepanel;
+#X obj 317 265 print minmaxs:;
+#X obj 282 10 r /piano/\$1/minmaxs/save;
+#X obj 127 162 symbol xxx;
+#X obj 523 154 symbol xxx;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 5 0 8 0;
+#X connect 5 0 29 0;
+#X connect 6 0 0 0;
+#X connect 6 1 4 0;
+#X connect 6 2 5 0;
+#X connect 6 2 31 1;
+#X connect 6 3 7 0;
+#X connect 7 0 5 0;
+#X connect 9 0 27 0;
+#X connect 10 0 9 0;
+#X connect 10 1 27 0;
+#X connect 10 2 12 0;
+#X connect 10 3 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 2 0;
+#X connect 12 0 8 0;
+#X connect 12 0 29 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 23 0;
+#X connect 15 0 24 0;
+#X connect 15 0 29 0;
+#X connect 16 0 13 0;
+#X connect 16 1 14 0;
+#X connect 16 2 15 0;
+#X connect 16 2 32 1;
+#X connect 16 3 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 28 0;
+#X connect 19 0 18 0;
+#X connect 19 1 28 0;
+#X connect 19 2 21 0;
+#X connect 19 3 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 23 0;
+#X connect 21 0 24 0;
+#X connect 21 0 29 0;
+#X connect 22 0 19 0;
+#X connect 25 0 10 0;
+#X connect 26 0 16 0;
+#X connect 27 0 12 0;
+#X connect 28 0 21 0;
+#X connect 30 0 31 0;
+#X connect 30 0 32 0;
+#X connect 31 0 12 0;
+#X connect 32 0 21 0;
+#X restore 35 186 pd ctls;
+#X text 58 155 -------- control the tables --------;
+#X obj 461 25 r /piano/\$1/vis_notemaxs;
+#X obj 454 157 r /piano/\$1/vis_notemins;
+#X obj 461 47 pack 0 \$1;
+#X msg 461 75 \; pd-/piano/\$2/notemaxs vis \$1;
+#X obj 454 178 pack 0 \$1;
+#X msg 454 197 \; pd-/piano/\$2/notemins vis \$1;
+#X obj 465 129 tgl 15 0 /piano/\$1/vis_notemins /piano/\$1/vis_notemins
+v_notemins\$1 17 7 0 10 -257985 -1 -1 1 1;
+#X obj 466 110 tgl 15 0 /piano/\$1/vis_notemaxs /piano/\$1/vis_notemaxs
+v_notemaxs\$1 17 7 0 10 -257985 -1 -1 0 1;
+#X obj 38 258 s /piano/\$1/notemins;
+#X obj 38 217 r /piano/\$1/notemins/linear;
+#X msg 38 237 const 1;
+#X obj 237 219 r /piano/\$1/notemaxs/linear;
+#X obj 237 260 s /piano/\$1/notemaxs;
+#X msg 237 239 const 400;
+#X connect 8 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 21 0;
+#X connect 21 0 20 0;
