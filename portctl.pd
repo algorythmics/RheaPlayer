@@ -1,0 +1,36 @@
+#N canvas 30 129 611 230 10;
+#X obj 8 -122 udpreceive 6001;
+#X obj 22 -51 route 0 1 2;
+#X obj 43 9 print ctl_port_tick_per_second_not implemented;
+#X text 213 -185 PD Escher Lib: receive from broadcast the MAC Addr
+and IP if Escher Board is online \, use boards from the list in the
+arguments;
+#X obj 24 -96 s /pde/ctlport;
+#X text 129 -59 message types;
+#X text 109 -123 receive from all \, also broadcasts;
+#X obj 154 -99 s /pde/ctlport/udpinfo;
+#X text 156 73 LGPL: (c) algorythmics \, winfried ritsch;
+#X text 20 -145 ONLY ONE needed for eschernetwork;
+#X text 22 -179 pde/portctl;
+#X text 104 -48 0="alive signal" 1="ticks per second" 2="statistics"
+;
+#X obj 85 -28 print ctl_port_uknown_package;
+#X obj 8 50 spigot;
+#X obj 54 48 r /pde/ctlport/v;
+#X obj 9 68 print /pde/ctlport;
+#X text 168 52 Verbosity on console;
+#X text 299 -97 for debugging \, who sends on the port ?;
+#X obj 62 -9 s /pde/statistic;
+#X text 165 -9 reports from escher about their timing (debugging);
+#X obj 25 28 s /pde/alive;
+#X connect 0 0 1 0;
+#X connect 0 0 4 0;
+#X connect 0 0 13 0;
+#X connect 0 1 7 0;
+#X connect 1 0 20 0;
+#X connect 1 1 2 0;
+#X connect 1 2 18 0;
+#X connect 1 3 12 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 1;
+#X coords 0 0 1 1 400 50 0;
