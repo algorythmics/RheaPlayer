@@ -24,5 +24,8 @@ The 'escher' has a Ethernet Port with unique MAC address and an assigned IP addr
 
 Parsing and construction the syntax is done by helper functions, which each command implemented in the EscherOS also a pde object is prepared with optional control interface (GUI), see help files for details.
 
+announce-port
+: 6001
+
 GPL-3.0 
  copyleft by  Atelier Algorythmics, Winfried Ritsch
