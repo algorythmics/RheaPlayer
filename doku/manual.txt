@@ -1,0 +1,106 @@
+=================
+Rhea Player Setup
+=================
+Automatic Piano Player robot Rhea Standard Interface as Pd Patch
+----------------------------------------------------------------
+
+RheaPlayer as Puredata Application patch for Puredata 
+
+Start with opening the main-patch: 'RheaPlayer.pd' either from desktop, on command line or create a starter for your OS-System.
+
+1.) Prerequisites
+-----------------
+
+- Puredata version >= 0.48-1 (see http://msp.ucsd.edu/software.html )
+  
+  for Pd Vanilla Version, but maybe others work too but are untestet
+
+- Pd libraries must have:
+
+  Get them via 'deken' ('find externals' in help menu) and put them in your favorite Pd-Library Path 
+  or in the 'libs/' directory. Also there is a script to get and update the libraries in libs.
+
+    - iemlib (iemlib1 + iemlib2 + abstractions in iemlib)
+    - zexy
+
+- Pd libraries optional:
+    - cyclone : seq object for midifile player instead of xeq (see notes on xeq below) 
+    - acre : for data storage functionality
+
+2.) Configuration of Pd
+-----------------------
+
+
+If MIDI is used, configure the "Media->MIDI-Settings" in Pd and store settings (see Pd manual). 
+No other setting is needed. 
+
+Note on Audio: 
+    When Audio is disabled (no ADC/DAC set), the realtime timer of the system is used for timing, which is on some machine more accurate then the audio interfaces and reduces latencies an jitter.
+
+    If audio functionality for your application is needed, configure audio. If audio and "DSP on", the timing is done by the audio-driver, so the resolution depends on the audio-buffer and latency settings there. Mostly this does not do any harm. If no audio is used, the system timer, or realtime system-timer if available, of the computer isnused for the timig. Since the RheaPlayer Pd-patch is computational lightweight, there should not be any noticeable jitter above 1~ms, which for a piano with a 10~ms attack time of the hammers is more than suitable, but ... it depends on the situation.
+
+3.) Operate
+-----------
+
+network setup
+.............
+
+Ethernet Cable to rhea should be attached, note that rhea can not detect cross-over situations, so use a crossover Ethernet-cable if not using a ethernet-hub or your computer cannot do any crossover-switchin, which most ethernet interfaces can do.
+
+rhea serie has fixed IP addresses, so to connect to any rhea the number of the rhea, which is written on the rheas ethernet port or nearby)  to be configured in the settings and will be stored in the 'config.txt' for next start. configure your computers Ethernet interface with a fixed IP address in "manual" mode, choose one in the range of "192.168.10.1-192.168.10.127" and netmask 255.255.255.0 (example: 192.168.10.2/24). If more computer on the same network please use different IP numbers. 
+
+The IP of the rhea-player is '192.168.10.(128+rheanumber)' and with a reinit the connection should be done.
+
+OSC functionality
+.................
+
+For playing the pianplayer with Opensound protocol an UDP connection is used. There are two ways to address the pianoplayer via the Rheaplaye Interface: as indexed piano enabling different pianos to be controlled over the same OSC connection and simple MIDI notes:
+
+indexed:
+
+  /piano/<nr>/note <note> <velocity> ... <nr> = number of piano, <note> = MIDI note number, <velocity> = MIDI velocity or noteoff if 0
+  
+indirect:
+
+ /midi/note <note> <velocity> ... <note> = MIDI note number, <velocity> = MIDI velocity or note off if 0
+
+
+MIDI Input
+..........
+
+Use the internal MIDI-Patching of your OS, if available. On Linux for example jack-midi, on Mac OS-X core MIDI settings. If using an external MIDI-device on your computer route it in the Pd and turn on MIDI on the GUI of the patch.
+
+
+
+4.) Usage of the PD pianoplayer library
+---------------------------------------
+
+This Pd-Patch as application is heavily based on the pianoplayer library, which was extracted on the pianoplayer projects over the last years as common usage base. You can build your own Pd-application for your artwork using the libraries "pdpp" and "pde".
+
+see libraries for more Information there.
+
+
+Background Information on RheaPlayer
+------------------------------------
+
+see http://github.com/algorythmics/pianplayer
+
+Notes on Xeq
+------------
+
+Xeq is a very nicely structured, efficient sequencer library for Pd, to be used for multi-tracking, loops, score following and
+MIDI recording, originally written by see http://suita.chopin.edu.pl/~czaja/miXed/externs/xeq.html
+But the development of xeq has stopped. So a fork of it is targeted. In the meantime  seq of the cyclone library is used, which pops up a dialog if a MIDI-file is not found and therefore not usable for installations and has some other drawbacks.
+
+orig: 
+ http://suita.chopin.edu.pl/~czaja/miXed/externs/xeq.html
+forked: 
+ https://github.com/pd-externals/xeq
+
+Information
+-----------
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: GPL-v3: winfried ritsch -  algorythmics 2004+
+:Version: see ../readme.rst
+:Master: https://github.com/algorythmics/RheaPlayer - doku 

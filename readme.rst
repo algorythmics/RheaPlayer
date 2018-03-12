@@ -23,17 +23,19 @@ data
  collection of measurements for different pianos and piano-player
 
 doku
- Setup dokumentation and Playing information
- 
+ Setup documentation and Playing information
+
 libs
  used library, static and to fetch see 'libs/readme.rst'
 
-
+tools
+ tools, helper and examples
+ 
 Information
 -----------
 
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: GPL-v3: winfried ritsch -  algorythmics 2004+
-:Version: 0.2a
+:Version: 0.8a
 :Master: https://github.com/algorythmics/RheaPlayer
