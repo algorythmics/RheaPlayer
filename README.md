@@ -30,5 +30,8 @@ Info
 announce-port: 
  6001
 
-GPL-3.0 
- copyleft by  Atelier Algorythmics, Winfried Ritsch
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: GPL-v3: winfried ritsch -  algorythmics 2004+
+:Version: 1.0
+:Master: https://github.com/algorythmics/pde
