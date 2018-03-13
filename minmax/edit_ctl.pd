@@ -1,75 +1,86 @@
 #N canvas 430 314 502 190 10;
 #X obj 188 52 r /piano/\$1/minmaxs/edit/gui;
-#N canvas 607 58 483 335 \$0-gui 1;
-#X obj 20 14 cnv 15 400 300 empty empty edit_min_max_\$1 20 12 0 14
+#N canvas 607 58 550 359 \$0-gui 1;
+#X obj 20 14 cnv 15 500 300 empty empty edit_min_max_\$1 20 12 0 14
 -233017 -66577 0;
-#X obj 99 245 bng 15 250 50 0 /piano/\$1/minmaxs/save /piano/\$1/minmaxs/save
-save_minmaxs\$1 0 -6 0 8 -258113 -1 -1;
-#X obj 28 177 tgl 15 0 /piano/\$1/vis_notemins /piano/\$1/vis_notemins
-v_notemins\$1 17 7 0 10 -257985 -1 -1 1 1;
-#X obj 28 207 tgl 15 0 /piano/\$1/vis_notemaxs /piano/\$1/vis_notemaxs
+#X obj 25 264 bng 15 250 50 0 /piano/\$1/minmaxs/save /piano/\$1/minmaxs/save
+save-defaults 0 -6 0 8 -258113 -1 -1;
+#X obj 28 155 tgl 15 0 /piano/\$1/vis_notemins /piano/\$1/vis_notemins
+v_notemins\$1 17 7 0 10 -257985 -1 -1 0 1;
+#X obj 28 185 tgl 15 0 /piano/\$1/vis_notemaxs /piano/\$1/vis_notemaxs
 v_notemaxs\$1 17 7 0 10 -257985 -1 -1 0 1;
-#X obj 86 84 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/hold/val /piano/\$1/hold/val
+#X obj 86 70 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/hold/val /piano/\$1/hold/val
 hold 0 -8 0 10 -4034 -1 -1 32 256;
-#X obj 25 84 bng 15 250 50 0 /piano/\$1/hold/load /piano/\$1/hold/load
+#X obj 25 70 bng 15 250 50 0 /piano/\$1/hold/load /piano/\$1/hold/load
 load_hold 0 -6 0 8 -24198 -1 -1;
-#X obj 27 246 bng 15 250 50 0 /piano/\$1/minmaxs/load /piano/\$1/minmaxs/load
-load_minmaxs\$1 0 -6 0 8 -4034 -1 -1;
-#X obj 210 196 vradio 15 1 0 4 /piano/\$1/minmax/edit/v_presets /piano/\$1/minmax/edit/v_presets
+#X obj 26 234 bng 15 250 50 0 /piano/\$1/minmaxs/load /piano/\$1/minmaxs/load
+load-defaults 0 -6 0 8 -4034 -1 -1;
+#X obj 262 188 vradio 15 1 0 4 /piano/\$1/minmax/edit/v_presets /piano/\$1/minmax/edit/v_presets
 velocity 0 -8 0 10 -204800 -1 -1 0;
-#X text 227 212 10;
-#X text 227 227 100;
-#X obj 194 115 tgl 30 0 /piano/\$1/minmax/edit/on /piano/\$1/minmax/edit/on
-PLAY 32 7 0 14 -262144 -1 -1 1 1;
-#X obj 275 37 bng 20 250 50 0 /piano/\$1/minmax/edit/inc /piano/\$1/minmax/edit/inc
+#X text 279 202 10;
+#X text 279 217 100;
+#X obj 261 112 tgl 60 0 /piano/\$1/minmax/edit/on /piano/\$1/minmax/edit/on
+PLAY 3 32 0 24 -262144 -1 -1 0 1;
+#X obj 343 36 bng 20 250 50 0 /piano/\$1/minmax/edit/inc /piano/\$1/minmax/edit/inc
 +1 20 11 0 14 -204786 -1 -1;
-#X obj 191 39 bng 20 250 50 0 /piano/\$1/minmax/edit/dec /piano/\$1/minmax/edit/dec
+#X obj 259 38 bng 20 250 50 0 /piano/\$1/minmax/edit/dec /piano/\$1/minmax/edit/dec
 -1 -17 11 0 14 -204786 -1 -1;
-#X obj 280 60 bng 15 250 50 0 /piano/\$1/minmax/edit/inc12 /piano/\$1/minmax/edit/inc12
+#X obj 348 59 bng 15 250 50 0 /piano/\$1/minmax/edit/inc12 /piano/\$1/minmax/edit/inc12
 +12 17 7 0 10 -4034 -1 -1;
-#X obj 191 61 bng 15 250 50 0 /piano/\$1/minmax/edit/dec12 /piano/\$1/minmax/edit/dec12
+#X obj 259 60 bng 15 250 50 0 /piano/\$1/minmax/edit/dec12 /piano/\$1/minmax/edit/dec12
 -12 -20 7 0 10 -4034 -1 -1;
-#X obj 217 61 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/note
-/piano/\$1/minmax/edit/note note 0 -8 0 18 -204786 -1 -1 48 256;
-#X obj 211 276 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/vel
-/piano/\$1/minmax/edit/vel vel 0 -8 0 10 -204800 -1 -1 1 256;
-#X obj 270 228 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/time
-/piano/\$1/minmax/edit/time time 0 -8 0 10 -262144 -1 -1 700 256;
-#X obj 328 64 vsl 30 200 0 600 0 0 /piano/\$1/minmax/edit/min /piano/\$1/minmax/edit/min
-min 0 -9 0 10 -262144 -1 -1 1300 1;
-#X obj 369 64 vsl 30 200 0 700 0 0 /piano/\$1/minmax/edit/max /piano/\$1/minmax/edit/max
-max 0 -9 0 10 -262144 -1 -1 15669 1;
-#X obj 326 281 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/min
-/piano/\$1/minmax/edit/min min 0 -8 0 10 -262144 -1 -1 39.196 256;
-#X obj 369 282 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/max
-/piano/\$1/minmax/edit/max max 0 -8 0 10 -262144 -1 -1 551.169 256
-;
-#X obj 271 123 vradio 15 1 0 6 /piano/\$1/minmax/edit/timepresets /piano/\$1/minmax/edit/timepresets
+#X obj 285 60 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/note
+/piano/\$1/minmax/edit/note note 0 -8 0 18 -204786 -1 -1 0 256;
+#X obj 263 268 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/vel
+/piano/\$1/minmax/edit/vel vel 0 -8 0 10 -204800 -1 -1 0 256;
+#X obj 335 217 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/time
+/piano/\$1/minmax/edit/time time 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 419 62 vsl 30 200 0 600 0 0 /piano/\$1/minmax/edit/min /piano/\$1/minmax/edit/min
+min 0 -9 0 10 -262144 -1 -1 0 1;
+#X obj 460 62 vsl 30 200 0 700 0 0 /piano/\$1/minmax/edit/max /piano/\$1/minmax/edit/max
+max 0 -9 0 10 -262144 -1 -1 0 1;
+#X obj 417 279 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/min
+/piano/\$1/minmax/edit/min min 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 460 280 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/max
+/piano/\$1/minmax/edit/max max 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 336 112 vradio 15 1 0 6 /piano/\$1/minmax/edit/timepresets /piano/\$1/minmax/edit/timepresets
 metro 0 -8 0 10 -262144 -1 -1 4;
-#X text 287 119 80;
-#X text 287 136 90;
-#X text 287 165 200;
-#X text 288 182 700;
-#X text 288 196 1000;
-#X text 288 151 120;
-#X obj 270 245 bng 15 250 50 0 /piano/\$1/minmax/edit/play /piano/\$1/minmax/edit/play
+#X text 352 108 80;
+#X text 352 125 90;
+#X text 352 154 200;
+#X text 353 171 700;
+#X text 353 185 1000;
+#X text 353 140 120;
+#X obj 335 234 bng 15 250 50 0 /piano/\$1/minmax/edit/play /piano/\$1/minmax/edit/play
 play 17 7 0 10 -262144 -1 -1;
-#X obj 125 179 bng 15 250 50 0 /piano/\$1/mins/linear /piano/\$1/mins/linear
-reset_mins_\$1 0 -6 0 8 -260097 -1 -1;
-#X obj 131 210 bng 15 250 50 0 /piano/\$1/maxs/linear /piano/\$1/maxs/linear
-reset_maxs_\$1 0 -6 0 8 -260097 -1 -1;
-#X text 229 194 1;
-#X obj 87 113 bng 15 250 50 0 /piano/\$1/hold/save /piano/\$1/hold/save
+#X obj 138 159 bng 15 250 50 0 /piano/\$1/mins/linear /piano/\$1/mins/linear
+reset_mins 0 -6 0 8 -260097 -1 -1;
+#X obj 136 189 bng 15 250 50 0 /piano/\$1/maxs/linear /piano/\$1/maxs/linear
+reset_maxs 0 -6 0 8 -260097 -1 -1;
+#X text 281 186 1;
+#X obj 87 99 bng 15 250 50 0 /piano/\$1/hold/save /piano/\$1/hold/save
 save_hold_\$1 0 -6 0 8 -258113 -1 -1;
-#X text 227 240 127;
-#X obj 271 279 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/len
-/piano/\$1/minmax/edit/len len 0 -8 0 10 -262144 -1 -1 560 256;
-#X obj 24 111 bng 15 250 50 0 /piano/\$1/hold/recall /piano/\$1/hold/recall
+#X text 279 230 127;
+#X obj 336 268 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/minmax/edit/len
+/piano/\$1/minmax/edit/len len 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 24 97 bng 15 250 50 0 /piano/\$1/hold/recall /piano/\$1/hold/recall
 recall 17 7 0 10 -262144 -1 -1;
-#X text 27 53 --- 1.) HOLD ---;
-#X text 21 150 --- 2.) Min Max ---;
-#X text 21 297 Note: save to data/ and load with init;
-#X text 18 271 each rhea/Piano combination his own minmaxs;
+#X text 27 39 --- 1.) HOLD ---;
+#X text 24 291 Note: save to data/ and load with init;
+#X text 20 317 each rhea/Piano combination his own minmaxs;
+#X obj 115 260 bng 15 250 50 0 /piano/\$1/notemins/write /piano/\$1/notemins/write
+save_mins 0 -6 0 8 -258113 -1 -1;
+#X obj 116 230 bng 15 250 50 0 /piano/\$1/notemins/read /piano/\$1/notemins/read
+open_mins 0 -6 0 8 -4034 -1 -1;
+#X obj 162 260 bng 15 250 50 0 /piano/\$1/notemaxs/write /piano/\$1/notemaxs/write
+save_maxs 0 -6 0 8 -258113 -1 -1;
+#X obj 163 230 bng 15 250 50 0 /piano/\$1/notemaxs/read /piano/\$1/notemaxs/read
+open_maxs 0 -6 0 8 -4034 -1 -1;
+#X text 419 26 -- adjust --;
+#X text 252 16 --- select ----;
+#X text 269 82 ---repeat ---;
+#X text 22 129 --- 2.) Min Max tables ---;
+#X text 124 205 - files -;
 #X restore 34 99 pd \$0-gui;
 #X obj 188 72 pack 0 \$0;
 #X text 29 20 popup gui vor minmaxs_edit;

@@ -1,4 +1,4 @@
-#N canvas 912 127 450 306 10;
+#N canvas 912 127 400 234 10;
 #X obj 11 11 cnv 15 198 198 empty empty PIANO_\$1_CTL 3 10 0 14 -262130
 -66577 0;
 #X symbolatom 22 77 15 0 0 2 piano_ip - /piano/#1/ip, f 15;
@@ -6,9 +6,9 @@
 portnr 0 -8 0 10 -262144 -1 -1 6000 256;
 #X obj 19 33 tgl 30 0 /piano/\$1/on /piano/\$1/on ON 3 15 0 22 -4034
 -1 -1 1 1;
-#X obj 15 186 tgl 15 0 /piano/\$1/minmaxs/edit/gui /piano/\$1/minmaxs/edit/gui
+#X obj 16 180 tgl 15 0 /piano/\$1/minmaxs/edit/gui /piano/\$1/minmaxs/edit/gui
 minmax_edit 17 7 0 10 -260097 -1 -1 1 1;
-#X obj 117 185 tgl 15 0 /piano/\$1/notemap/edit/gui /piano/\$1/notemap/edit/gui
+#X obj 116 181 tgl 15 0 /piano/\$1/notemap/edit/gui /piano/\$1/notemap/edit/gui
 notemap_edit 17 7 0 10 -260097 -1 -1 0 1;
 #X text 36 95 ------ VELTAB -------;
 #X obj 258 25 r /piano/\$1/ip;

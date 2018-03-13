@@ -1,4 +1,4 @@
-#N canvas 215 58 716 361 10;
+#N canvas 215 58 609 361 10;
 #X obj 22 103 inlet;
 #X text 27 40 Needed objects to play one piano with nr <piano_nr>;
 #X text 235 273 finger command;
@@ -28,7 +28,7 @@
 #X connect 3 0 5 0;
 #X connect 4 0 6 0;
 #X connect 5 0 7 0;
-#X restore 21 239 pd split for doubled;
+#X restore 22 239 pd split for doubled;
 #X obj 47 215 r /piano/\$1/finger;
 #X text 192 245 for direct control;
 #X text 24 8 pdpp/piano/stack <piano_nr=send1 nr> [send2 nr];
@@ -36,14 +36,14 @@
 #X text 445 240 if second piano;
 #X obj 97 131 ../minmax/edit \$1;
 #X obj 22 158 ../minmax/map \$1;
-#X obj 21 188 ../notemap/map \$1;
-#X obj 19 264 ../rhea/finger;
-#X obj 138 266 ../rhea/finger;
+#X obj 22 188 ../notemap/map \$1;
+#X obj 22 264 ../rhea/finger;
+#X obj 139 266 ../rhea/finger;
 #X obj 149 189 ../notemap/store \$1;
 #X obj 482 180 ../hold/store \$1;
 #X obj 150 157 ../minmax/store \$1;
-#X obj 138 304 outlet 2nd_rhea;
-#X obj 19 302 outlet rhea;
+#X obj 139 304 outlet 2nd_rhea;
+#X obj 22 302 outlet rhea;
 #X obj 350 203 ../hold/cmd;
 #X text 32 325 via UDP to rhea(s);
 #X obj 350 178 r /piano/\$1/hold/val;
