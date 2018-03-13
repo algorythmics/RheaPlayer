@@ -70,5 +70,8 @@ Notes
 
 Note 1: with acre/ds datastorage for pianos can be used.
 
-
-(C) GPL-v3.0 Winfried Ritsch, Atelier Algorythmics
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: GPL-v3: winfried ritsch -  algorythmics 2004+
+:Version: 1.0
+:Master: https://github.com/algorythmics/pdpp
