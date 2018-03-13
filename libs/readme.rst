@@ -1,14 +1,23 @@
-Place needed external libraries for Pd in here.
+Folder for internal and external puredata libraries.
 
-This could be the case if 
-- they are not available on the system or local Pd installation,
-- not wanting to use deken or its default directory,
-- for development and debug of such a dependent library,
-- personal decision.
+Internal libraries
+..................
 
-A script is put in here to get the latest from repos for:
+pde
+ Pd escher interface see: https://github.com/algorythmics/pde
+ 
+pdpp
+ Pd piano player library see: https://github.com/algorythmics/pdpp
 
- acre - algorithmic composition realtime environment 
+
+The script get_libs.sh is placed in here to fetch or update the latest from github repos.
+
+
+External libraries
+..................
+
+needed: iemlib, zexy
+recommended: cyclone for midifiles
 
 Note: Also deken can be used to download external libraries in here.
 
