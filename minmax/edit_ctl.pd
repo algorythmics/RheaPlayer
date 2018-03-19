@@ -6,7 +6,7 @@
 #X obj 25 264 bng 15 250 50 0 /piano/\$1/minmaxs/save /piano/\$1/minmaxs/save
 save-defaults 0 -6 0 8 -258113 -1 -1;
 #X obj 28 155 tgl 15 0 /piano/\$1/vis_notemins /piano/\$1/vis_notemins
-v_notemins\$1 17 7 0 10 -257985 -1 -1 0 1;
+v_notemins\$1 17 7 0 10 -257985 -1 -1 1 1;
 #X obj 28 185 tgl 15 0 /piano/\$1/vis_notemaxs /piano/\$1/vis_notemaxs
 v_notemaxs\$1 17 7 0 10 -257985 -1 -1 0 1;
 #X obj 86 70 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/hold/val /piano/\$1/hold/val
@@ -68,13 +68,13 @@ recall 17 7 0 10 -262144 -1 -1;
 #X text 27 39 --- 1.) HOLD ---;
 #X text 24 291 Note: save to data/ and load with init;
 #X text 20 317 each rhea/Piano combination his own minmaxs;
-#X obj 115 260 bng 15 250 50 0 /piano/\$1/notemins/write /piano/\$1/notemins/write
+#X obj 115 260 bng 15 250 50 0 /piano/\$1/notemins/save /piano/\$1/notemins/save
 save_mins 0 -6 0 8 -258113 -1 -1;
-#X obj 116 230 bng 15 250 50 0 /piano/\$1/notemins/read /piano/\$1/notemins/read
+#X obj 116 230 bng 15 250 50 0 /piano/\$1/notemins/open /piano/\$1/notemins/open
 open_mins 0 -6 0 8 -4034 -1 -1;
-#X obj 162 260 bng 15 250 50 0 /piano/\$1/notemaxs/write /piano/\$1/notemaxs/write
+#X obj 162 260 bng 15 250 50 0 /piano/\$1/notemaxs/save /piano/\$1/notemaxs/save
 save_maxs 0 -6 0 8 -258113 -1 -1;
-#X obj 163 230 bng 15 250 50 0 /piano/\$1/notemaxs/read /piano/\$1/notemaxs/read
+#X obj 163 230 bng 15 250 50 0 /piano/\$1/notemaxs/open /piano/\$1/notemaxs/open
 open_maxs 0 -6 0 8 -4034 -1 -1;
 #X text 419 26 -- adjust --;
 #X text 252 16 --- select ----;

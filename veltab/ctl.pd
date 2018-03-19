@@ -12,4 +12,4 @@
 #X obj 243 19 tgl 15 0 \$1/v_ctl \$1/v_ctl V 5 7 0 10 -257985 -1 -1
 0 1;
 #X text 266 20 not implemented until now;
-#X coords 0 -1 1 1 200 50 1 10 10;
+#X coords 0 -1 1 1 200 50 2 10 10;

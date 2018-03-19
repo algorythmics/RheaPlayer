@@ -7,7 +7,7 @@ portnr 0 -8 0 10 -262144 -1 -1 6000 256;
 #X obj 19 33 tgl 30 0 /piano/\$1/on /piano/\$1/on ON 3 15 0 22 -4034
 -1 -1 1 1;
 #X obj 16 180 tgl 15 0 /piano/\$1/minmaxs/edit/gui /piano/\$1/minmaxs/edit/gui
-minmax_edit 17 7 0 10 -260097 -1 -1 1 1;
+minmax_edit 17 7 0 10 -260097 -1 -1 0 1;
 #X obj 116 181 tgl 15 0 /piano/\$1/notemap/edit/gui /piano/\$1/notemap/edit/gui
 notemap_edit 17 7 0 10 -260097 -1 -1 0 1;
 #X text 36 95 ------ VELTAB -------;
