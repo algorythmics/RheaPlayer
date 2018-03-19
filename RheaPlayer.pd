@@ -29,12 +29,12 @@
 #X obj 35 104 declare -path . -path abs -path data -path libs -path
 libs/pdpp/data, f 70;
 #X restore 44 38 pd declares;
-#N canvas 283 77 687 590 GUI 1;
+#N canvas 398 98 687 590 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
 #X obj 233 76 pdpp/iface/osc_ctl 1;
 #X obj 30 285 pdpp/noteeq/ctl 1;
-#X obj 29 366 pdpp/test/arp 1;
-#X obj 29 416 pdpp/test/note 1;
+#X obj 29 368 pdpp/test/arp 1;
+#X obj 29 418 pdpp/test/note 1;
 #X obj 29 518 pdpp/iface/midiout_ctl 1;
 #X obj 53 56 nbx 2 14 0 1e+37 0 0 /rhea/nr /rhea/nr /rhea/nr 0 -8 0
 10 -262144 -1 -1 8 256;
@@ -47,11 +47,11 @@ libs/pdpp/data, f 70;
 #X text 72 342 --- TESTS ---;
 #X text 355 342 --- MIDI-File Player ---;
 #X text 27 13 RheaPlayer Interface V1.0;
-#X obj 30 77 pdpp/rhea/ctl 1;
+#X obj 30 76 pdpp/rhea/ctl 1;
 #X obj 239 368 pdpp/iface/mifi_ctl 1;
 #X obj 439 368 pdpp/iface/mifi_ctl 2;
 #X restore 43 88 pd GUI;
-#N canvas 146 58 912 636 init 0;
+#N canvas 521 58 912 636 init 0;
 #X obj 41 94 t b b b;
 #X text 160 56 Initial values set after loading;
 #X msg 101 122 --- patch main loaded --- \;;
@@ -111,7 +111,8 @@ libs/pdpp/data, f 70;
 #N canvas 619 418 450 300 config 0;
 #X obj 172 132 text define -k config;
 #A set # local setup \; /rhea/nr 8 \; # add your setup messages here
-\;;
+\; /piano/1/sim/on 0 \; /piano/1/midiin/on 1 \; /piano/1/osc/on 1 \;
+/piano/1/osc/midi/on 1 \; /piano/1/on 1 \;;
 #X obj 140 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 140 31 r reinit;
