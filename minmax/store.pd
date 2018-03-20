@@ -1,4 +1,4 @@
-#N canvas 814 58 695 297 10;
+#N canvas 667 58 695 297 10;
 #X text 29 -2 Notemin and notemax table is for adjusting individuals
 notes on the piano which they can play minimal volume and maximal volume.
 ;
@@ -39,7 +39,7 @@ bang \; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;;
 #X obj 163 268 print /piano/\$1/notemins;
 #X msg 217 159 symbol data/;
 #X obj 219 84 route bang path symbol list;
-#X msg 316 158 symbol \$1/\$2;
+#X msg 366 118 symbol \$1/\$2;
 #X msg 219 206 write \$1;
 #X msg 418 154 symbol data/;
 #X obj 417 173 openpanel;
@@ -64,6 +64,7 @@ bang \; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;;
 #X obj 405 35 r /piano/\$1/notemaxs/open;
 #X obj 597 36 r /piano/\$1/notemaxs/save;
 #X obj 202 39 r /piano/\$1/notemins/save;
+#X text 225 117 list <path> <filename>;
 #X connect 0 0 4 0;
 #X connect 0 0 8 0;
 #X connect 1 0 6 0;

@@ -1,7 +1,7 @@
 #N canvas 403 231 503 446 10;
-#X obj 101 101 cnv 15 198 48 empty empty arp_\$1 2 7 0 14 -204786 -66577
+#X obj 101 101 cnv 15 198 48 empty empty arp\$1 2 7 0 14 -204786 -66577
 0;
-#X obj 104 116 tgl 30 0 empty empty On 7 15 0 14 -4034 -1 -1 1 1;
+#X obj 104 116 tgl 30 0 empty empty On 7 15 0 14 -4034 -1 -1 0 1;
 #X obj 16 102 metro 500;
 #X obj 99 277 pack 1 64;
 #X obj 169 279 pipe 1 250;
@@ -26,26 +26,26 @@
 #X msg 315 104 80;
 #X obj 20 202 spigot;
 #X msg 20 224 0;
-#X obj 252 103 tgl 10 0 empty empty once 12 6 0 8 -262144 -1 -1 0 1
+#X obj 262 120 tgl 10 0 empty empty once 12 6 0 8 -262144 -1 -1 0 1
 ;
-#X obj 144 102 bng 15 250 50 0 empty empty R 5 8 0 10 -262144 -1 -1
+#X obj 139 133 bng 15 250 50 0 empty empty R 5 8 0 10 -262144 -1 -1
 ;
-#X obj 162 113 nbx 3 14 -1e+37 1e+37 0 0 empty empty from -25 8 0 10
--262144 -1 -1 19 256;
-#X obj 214 113 nbx 3 14 -1e+37 1e+37 0 0 empty empty to -12 8 0 10
--262144 -1 -1 108 256;
-#X obj 267 113 nbx 3 14 -1e+37 1e+37 0 0 empty empty vel -15 8 0 8
--262144 -1 -1 80 256;
+#X obj 168 102 nbx 3 14 1 128 0 0 empty empty from -25 8 0 10 -262144
+-1 -1 19 256;
+#X obj 218 102 nbx 3 14 1 128 0 0 empty empty to -12 8 0 10 -262144
+-1 -1 108 256;
+#X obj 268 103 nbx 3 14 0 128 0 0 empty empty vel -15 8 0 8 -262144
+-1 -1 80 256;
 #X obj 395 263 nbx 3 14 -1e+37 1e+37 0 0 empty empty from 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 340 274 nbx 3 14 -1e+37 1e+37 0 0 empty empty vel -15 8 0 8
 -262144 -1 -1 0 256;
-#X obj 162 132 nbx 3 14 -1e+37 1e+37 0 0 empty empty time -25 8 0 10
--262144 -1 -1 100 256;
-#X obj 261 133 nbx 3 14 -1e+37 1e+37 0 0 empty empty N -8 8 0 10 -204786
--1 -1 57 256;
-#X obj 214 132 nbx 3 14 -1e+37 1e+37 0 0 empty empty len -15 8 0 8
--262144 -1 -1 500 256;
+#X obj 159 132 nbx 4 14 0.01 9999 1 0 empty empty time 0 -6 0 10 -262144
+-1 -1 9473.69 256;
+#X obj 262 131 nbx 3 14 -1e+37 1e+37 0 0 empty empty N -8 8 0 10 -228856
+-1 -1 0 256;
+#X obj 206 132 nbx 4 14 1 99999 0 0 empty empty len 0 -6 0 10 -262144
+-1 -1 500 256;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
 #X connect 3 0 7 0;
