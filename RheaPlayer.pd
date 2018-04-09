@@ -37,7 +37,7 @@ libs/pdpp/data, f 70;
 #X obj 29 418 pdpp/test/note 1;
 #X obj 29 518 pdpp/iface/midiout_ctl 1;
 #X obj 53 56 nbx 2 14 0 1e+37 0 0 /rhea/nr /rhea/nr /rhea/nr 0 -8 0
-10 -262144 -1 -1 6 256;
+10 -262144 -1 -1 5 256;
 #X obj 91 56 bng 15 250 50 0 reinit reinit reinit_from_config.txt 17
 7 0 10 -262144 -1 -1;
 #X text 28 47 1);
@@ -64,7 +64,7 @@ libs/pdpp/data, f 70;
 #X obj 42 56 loadbang;
 #X obj 527 458 pdpp/rhea/ip 1;
 #X text 525 415 Set IP and port from rheanumber;
-#N canvas 73 434 450 300 setup 1;
+#N canvas 73 428 450 300 setup 0;
 #X text 21 24 Setup for the pianoplayer to use.;
 #X text 19 55 Before the first use define the number of the player
 ;
@@ -110,7 +110,7 @@ libs/pdpp/data, f 70;
 #X msg 544 77 \; pd-setup vis \$1;
 #N canvas 619 418 450 300 config 0;
 #X obj 172 132 text define -k config;
-#A set # local setup \; /rhea/nr 6 \; # add your setup messages here
+#A set # local setup \; /rhea/nr 5 \; # add your setup messages here
 \; /piano/1/sim/on 0 \; /piano/1/midiin/on 1 \; /piano/1/osc/on 1 \;
 /piano/1/osc/midi/on 1 \; /piano/1/on 1 \;;
 #X obj 140 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -151,8 +151,6 @@ rheanr ---, f 68;
 #X msg 527 485 \; /piano/1/portnr \$2 \; /piano/1/ip symbol \$1 \;
 ;
 #X msg 715 453 4;
-#X msg 267 644 \; /piano/\$1/notemap/read symbol notemaps/rhea_\$2_notemap.txt
-, f 71;
 #X msg 64 186 \; /piano/1/veltab/read symbol ../../../data/piano-1-veltab.txt
 \; /piano/1/on 1 \; /osc/1/veltab/read symbol ../../../data/osc-1-veltab.txt
 \; /midi/1/veltab/read symbol ../../../data/midi-1-veltab.txt \; /mifi/1/veltab/read
@@ -166,8 +164,10 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 \$2 \; /piano/\$1/notemins/read symbol ../../../data/minmaxs/notemins-\$2.txt
 \; /piano/\$1/notemaxs/read symbol ../../../data/minmaxs/notemaxs-\$2.txt
 \; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;, f 71;
-#X connect 0 0 36 0;
-#X connect 0 1 34 0;
+#X msg 267 644 \; /piano/\$1/notemap/read symbol notemaps/rhea_\$2_notemap.txt
+\;, f 71;
+#X connect 0 0 35 0;
+#X connect 0 1 33 0;
 #X connect 0 2 2 0;
 #X connect 2 0 8 0;
 #X connect 9 0 0 0;
@@ -177,16 +177,16 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X connect 19 0 20 0;
 #X connect 21 0 10 0;
 #X connect 22 0 24 0;
-#X connect 23 0 39 0;
+#X connect 23 0 38 0;
 #X connect 24 0 23 0;
 #X connect 24 1 23 1;
 #X connect 25 0 26 0;
 #X connect 27 0 25 0;
 #X connect 32 0 10 0;
-#X connect 35 0 6 0;
+#X connect 34 0 6 0;
+#X connect 35 0 34 0;
 #X connect 36 0 35 0;
-#X connect 37 0 36 0;
-#X connect 38 0 24 0;
+#X connect 37 0 24 0;
 #X restore 44 62 pd init;
 #X text 127 63 Initialize Patch;
 #X text 175 175 direct note all off to player;
