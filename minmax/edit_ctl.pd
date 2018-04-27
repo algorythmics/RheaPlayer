@@ -6,11 +6,11 @@
 #X obj 25 264 bng 15 250 50 0 /piano/\$1/minmaxs/save /piano/\$1/minmaxs/save
 save-defaults 0 -6 0 8 -258113 -1 -1;
 #X obj 28 155 tgl 15 0 /piano/\$1/vis_notemins /piano/\$1/vis_notemins
-v_notemins\$1 17 7 0 10 -257985 -1 -1 1 1;
+v_notemins\$1 17 7 0 10 -257985 -1 -1 0 1;
 #X obj 28 185 tgl 15 0 /piano/\$1/vis_notemaxs /piano/\$1/vis_notemaxs
-v_notemaxs\$1 17 7 0 10 -257985 -1 -1 1 1;
+v_notemaxs\$1 17 7 0 10 -257985 -1 -1 0 1;
 #X obj 86 70 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/hold/val /piano/\$1/hold/val
-hold 0 -8 0 10 -4034 -1 -1 37 256;
+hold 0 -8 0 10 -4034 -1 -1 41 256;
 #X obj 25 70 bng 15 250 50 0 /piano/\$1/hold/load /piano/\$1/hold/load
 load_hold 0 -6 0 8 -24198 -1 -1;
 #X obj 26 234 bng 15 250 50 0 /piano/\$1/minmaxs/load /piano/\$1/minmaxs/load
