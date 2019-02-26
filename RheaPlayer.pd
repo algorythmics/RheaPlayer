@@ -1,4 +1,4 @@
-#N canvas 295 90 727 438 12;
+#N canvas 538 66 727 438 12;
 #X declare -stdpath iemlib;
 #X declare -lib zexy;
 #X declare -lib cyclone/seq;
@@ -29,7 +29,7 @@
 #X obj 35 104 declare -path . -path abs -path data -path libs -path
 libs/pdpp/data, f 70;
 #X restore 44 38 pd declares;
-#N canvas 335 98 687 590 GUI 1;
+#N canvas 645 454 687 590 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
 #X obj 233 76 pdpp/iface/osc_ctl 1;
 #X obj 30 285 pdpp/noteeq/ctl 1;
@@ -37,7 +37,7 @@ libs/pdpp/data, f 70;
 #X obj 29 418 pdpp/test/note 1;
 #X obj 29 518 pdpp/iface/midiout_ctl 1;
 #X obj 53 56 nbx 2 14 0 1e+37 0 0 /rhea/nr /rhea/nr /rhea/nr 0 -8 0
-10 -262144 -1 -1 5 256;
+10 -262144 -1 -1 3 256;
 #X obj 91 56 bng 15 250 50 0 reinit reinit reinit_from_config.txt 17
 7 0 10 -262144 -1 -1;
 #X text 28 47 1);
@@ -69,7 +69,7 @@ libs/pdpp/data, f 70;
 #X text 19 55 Before the first use define the number of the player
 ;
 #X text 16 72 (Hint: Noted on rhea's ethernet port);
-#X floatatom 45 93 5 0 0 0 - - -, f 5;
+#X floatatom 45 93 5 0 0 0 - - -;
 #N canvas 91 58 450 424 generate 0;
 #X obj 50 41 inlet;
 #X obj 114 163 sel -1;
@@ -110,9 +110,9 @@ libs/pdpp/data, f 70;
 #X msg 544 77 \; pd-setup vis \$1;
 #N canvas 619 418 450 300 config 0;
 #X obj 172 132 text define -k config;
-#A set # local setup \; /rhea/nr 5 \; # add your setup messages here
-\; /piano/1/sim/on 0 \; /piano/1/midiin/on 1 \; /piano/1/osc/on 1 \;
-/piano/1/osc/midi/on 1 \; /piano/1/on 1 \;;
+#A set # local setup \; /rhea/nr 3 \; # add your setup messages here
+\; /piano/1/sim/on 0 \; /piano/1/midiin/on 1 \; /piano/1/osc/on 0 \;
+/piano/1/osc/midi/on 0 \; /piano/1/on 1 \;;
 #X obj 140 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 140 31 r reinit;
