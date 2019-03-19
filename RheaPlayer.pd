@@ -1,14 +1,8 @@
 #N canvas 538 66 727 438 12;
-#X declare -stdpath iemlib;
-#X declare -lib zexy;
-#X declare -lib cyclone/seq;
-#X declare -lib cyclone/midiflush;
-#X declare -lib cyclone/midiparse;
-#X declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
-#X declare -path . -path abs -path data -path libs -path libs/pdpp/data
-;
+#X declare -lib iemlib -lib zexy;
+#X declare -path . -path abs -path data -path libs/pdpp/data -path
+libs -path libs/cyclone -path libs/iemlib;
 #N canvas 434 277 694 359 declares 0;
-#X obj 32 209 declare -stdpath iemlib;
 #X text 25 12 --- path for Pd abstractions \, data \, libs ... ---
 ;
 #X text 14 35 a) paths for the projects;
@@ -19,15 +13,10 @@
 ;
 #X text 11 144 c) paths and libs for project in system: Need iemlib
 \, zexy;
-#X obj 32 235 declare -lib zexy;
 #X text 58 79 Note the order \, locals first can overwrite libs;
-#X obj 33 264 declare -lib cyclone/seq;
-#X obj 210 265 declare -lib cyclone/midiflush;
-#X text 426 263 for MIDI player;
-#X obj 213 286 declare -lib cyclone/midiparse;
-#X obj 208 210 declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
-#X obj 35 104 declare -path . -path abs -path data -path libs -path
-libs/pdpp/data, f 70;
+#X obj 37 209 declare -lib iemlib -lib zexy;
+#X obj 34 104 declare -path . -path abs -path data -path libs/pdpp/data
+-path libs -path libs/cyclone -path libs/iemlib, f 70;
 #X restore 44 38 pd declares;
 #N canvas 645 454 687 590 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
@@ -51,7 +40,7 @@ libs/pdpp/data, f 70;
 #X obj 439 368 pdpp/iface/mifi_ctl 2;
 #X text 27 13 RheaPlayer Interface V1.0z;
 #X restore 43 88 pd GUI;
-#N canvas 450 58 912 636 init 0;
+#N canvas 450 58 912 636 init 1;
 #X obj 41 94 t b b b;
 #X text 160 56 Initial values set after loading;
 #X msg 101 122 --- patch main loaded --- \;;
@@ -111,8 +100,8 @@ libs/pdpp/data, f 70;
 #N canvas 619 418 450 300 config 0;
 #X obj 172 132 text define -k config;
 #A set # local setup \; /rhea/nr 3 \; # add your setup messages here
-\; /piano/1/sim/on 0 \; /piano/1/midiin/on 1 \; /piano/1/osc/on 0 \;
-/piano/1/osc/midi/on 0 \; /piano/1/on 1 \;;
+\; /piano/1/sim/on 0 \; /piano/1/midiin/on 1 \; /piano/1/osc/on 1 \;
+/piano/1/osc/midi/on 1 \; /piano/1/on 1 \;;
 #X obj 140 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 140 31 r reinit;
@@ -150,7 +139,6 @@ libs/pdpp/data, f 70;
 rheanr ---, f 68;
 #X msg 527 485 \; /piano/1/portnr \$2 \; /piano/1/ip symbol \$1 \;
 ;
-#X msg 715 453 4;
 #X msg 64 186 \; /piano/1/veltab/read symbol ../../../data/piano-1-veltab.txt
 \; /piano/1/on 1 \; /osc/1/veltab/read symbol ../../../data/osc-1-veltab.txt
 \; /midi/1/veltab/read symbol ../../../data/midi-1-veltab.txt \; /mifi/1/veltab/read
@@ -159,15 +147,14 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X msg 41 533 --- dsp start/stop --- \; pd dsp \$1;
 #X obj 40 487 i 0;
 #X obj 74 452 r /piano/1/dsp;
-#X msg 402 459 8;
 #X msg 262 537 \; /piano/\$1/notemap/rheanr \$2 \; /piano/\$1/hold/rheanr
 \$2 \; /piano/\$1/notemins/read symbol ../../../data/minmaxs/notemins-\$2.txt
 \; /piano/\$1/notemaxs/read symbol ../../../data/minmaxs/notemaxs-\$2.txt
 \; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;, f 71;
-#X msg 267 644 \; /piano/\$1/notemap/read symbol notemaps/rhea_\$2_notemap.txt
+#X msg 239 646 \; /piano/\$1/notemap/read symbol notemaps/rhea_\$2_notemap.txt
 \;, f 71;
-#X connect 0 0 35 0;
-#X connect 0 1 33 0;
+#X connect 0 0 34 0;
+#X connect 0 1 32 0;
 #X connect 0 2 2 0;
 #X connect 2 0 8 0;
 #X connect 9 0 0 0;
@@ -177,16 +164,14 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X connect 19 0 20 0;
 #X connect 21 0 10 0;
 #X connect 22 0 24 0;
-#X connect 23 0 38 0;
+#X connect 23 0 36 0;
 #X connect 24 0 23 0;
 #X connect 24 1 23 1;
 #X connect 25 0 26 0;
 #X connect 27 0 25 0;
-#X connect 32 0 10 0;
-#X connect 34 0 6 0;
+#X connect 33 0 6 0;
+#X connect 34 0 33 0;
 #X connect 35 0 34 0;
-#X connect 36 0 35 0;
-#X connect 37 0 24 0;
 #X restore 44 62 pd init;
 #X text 127 63 Initialize Patch;
 #X text 175 175 direct note all off to player;
@@ -208,7 +193,6 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X text 445 55 --- Interfaces ---;
 #X obj 440 212 pdpp/iface/mifi 1;
 #X obj 437 78 pdpp/iface/midiin 1;
-#X text 45 8 Rheaplayer V-1.0 (GPLv3);
 #X text 320 7 For operating a Rheaplayer via \, Pd \, OSC \, MIDI or
 with midifiles;
 #X obj 437 102 s note;
@@ -219,10 +203,13 @@ with midifiles;
 #X obj 440 180 s note;
 #X obj 440 264 s note;
 #X obj 489 237 pdpp/iface/mifi 2;
+#X text 45 8 Rheaplayer V-1.1 (GPLv3);
+#X text 316 39 special for IEM Lehrstudio and CUBE \, but also for
+others;
 #X connect 7 0 12 0;
 #X connect 9 0 17 0;
-#X connect 11 0 29 0;
+#X connect 11 0 28 0;
 #X connect 12 0 8 0;
-#X connect 20 0 30 0;
-#X connect 21 0 24 0;
-#X connect 31 0 30 0;
+#X connect 20 0 29 0;
+#X connect 21 0 23 0;
+#X connect 30 0 29 0;
