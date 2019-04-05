@@ -1,0 +1,27 @@
+#N canvas 111 150 401 300 10;
+#X obj 8 46 inlet;
+#X obj 54 45 inlet;
+#X obj 100 45 inlet;
+#X obj 146 46 inlet;
+#X obj 5 200 +;
+#X obj 3 170 +;
+#X obj 1 142 +;
+#X obj 5 230 outlet;
+#X obj 147 95 << 24;
+#X obj 58 89 << 8;
+#X obj 102 90 << 16;
+#X text 11 17 PD Escher lib: convert 4 bytes in reverse order to word
+;
+#X text 11 28 bug: float has only 24 bits \, hmmm;
+#X text -3 258 GPL: (c) algorythmics \, winfried ritsch;
+#X text 10 4 pde_b2w;
+#X connect 0 0 6 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 8 0 4 1;
+#X connect 9 0 6 1;
+#X connect 10 0 5 1;
