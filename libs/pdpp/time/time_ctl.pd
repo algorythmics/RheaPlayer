@@ -1,0 +1,27 @@
+#N canvas 497 380 450 300 10;
+#X obj 101 101 cnv 15 198 23 empty empty timer 2 12 0 14 -228856 -66577
+0;
+#X obj 158 107 nbx 3 14 -1e+37 1e+37 0 0 \$1_h \$1_h empty 37 8 0 10
+-262144 -1 -1 0 256;
+#X text 87 45 time_time_ctl <prefix>;
+#X obj 194 107 nbx 3 14 -1e+37 1e+37 0 0 \$1_m \$1_m empty 37 8 0 10
+-262144 -1 -1 0 256;
+#X obj 230 107 nbx 3 14 -1e+37 1e+37 0 0 \$1_s \$1_s empty 37 8 0 10
+-262144 -1 -1 0 256;
+#X obj 269 108 nbx 3 10 -1e+37 1e+37 0 0 \$0-\$1_ms \$0-\$1_ms empty
+35 8 0 8 -262144 -1 -1 0 256;
+#X obj 340 45 loadbang;
+#X obj 340 87 metro 200;
+#X obj 347 164 f;
+#X obj 344 193 s \$0-\$1_ms;
+#X obj 370 125 r \$1_ms;
+#X obj 212 168 r \$0-\$1_ms;
+#X obj 212 189 s \$1_ms;
+#X msg 340 66 1;
+#X connect 6 0 13 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 1;
+#X connect 11 0 12 0;
+#X connect 13 0 7 0;
+#X coords 0 -1 1 1 200 25 2 100 100;

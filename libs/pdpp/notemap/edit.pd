@@ -1,0 +1,130 @@
+#N canvas 129 58 760 528 10;
+#X obj 101 101 cnv 15 198 48 empty empty nmedit_\$1 2 7 0 14 -262130
+-66577 0;
+#X obj 101 151 cnv 15 198 48 empty empty parameter 2 7 0 14 -261682
+-66577 0;
+#X obj 101 251 cnv 15 198 48 empty empty test 2 7 0 14 -204786 -66577
+0;
+#X obj 101 201 cnv 15 198 48 empty empty file 2 7 0 14 -204800 -66577
+0;
+#X text 23 16 edit the piano notemap;
+#X text 332 467 LGPL (c) 2010 algorythmics;
+#X obj 3 478 tabwrite /piano/\$1/notemap;
+#X floatatom 158 125 4 0 0 3 note - -, f 4;
+#X obj 137 123 bng 15 250 50 0 empty empty inc 0 23 0 10 -262144 -1
+-1;
+#X obj 239 124 bng 15 250 50 0 empty empty dec 0 23 0 10 -262144 -1
+-1;
+#X obj 110 271 tgl 15 0 empty empty play 0 23 0 10 -262144 -1 -1 0
+1;
+#X floatatom 156 271 5 0 0 3 vel - -, f 5;
+#X obj 239 203 bng 15 250 50 0 /piano/\$1/notemap/load /piano/\$1/notemap/load
+load 17 7 0 10 -4034 -1 -1;
+#X floatatom 197 126 4 0 0 3 finger - -, f 4;
+#X text 434 86 A4 ... 69 ... a';
+#X text 434 21 A0 ... 21 ... A'';
+#X text 434 35 C1 ... 24 ... C';
+#X text 433 49 C2 ... 36 ... C;
+#X text 434 62 C3 ... 48 ... c;
+#X text 434 75 C4 ... 60 ... c';
+#X text 433 99 C5 ... 72 ... c'';
+#X text 434 112 C6 ... 84 ... c''';
+#X text 434 128 C7 ... 96 ... c'''';
+#X text 432 144 C8 ... 108 ... c''''';
+#X obj 168 217 bng 15 250 50 0 /piano/\$1/notemap/write /piano/\$1/notemap/write
+save 17 7 0 10 -258113 -1 -1;
+#X obj 5 452 i 21;
+#X obj 160 440 i 21;
+#X obj 168 28 tabread /piano/\$1/notemap;
+#X obj 204 316 metro 500;
+#X obj 106 179 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/noteoffset /piano/\$1/noteoffset
+noteoffset 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 168 180 nbx 3 14 -1e+37 1e+37 0 0 /piano/\$1/vel_scale /piano/\$1/vel_scale
+vel_scale 0 -8 0 10 -262144 -1 -1 1 256;
+#X obj 228 180 nbx 5 14 -1e+37 1e+37 0 0 /piano/\$1/vel_limit /piano/\$1/vel_limit
+vel_limit 0 -8 0 10 -262144 -1 -1 8192 256;
+#X obj 106 218 bng 15 250 50 0 /piano/\$1/notemap/save /piano/\$1/notemap/save
+resave 17 7 0 10 -258113 -1 -1;
+#X obj 358 205 loadbang;
+#X text 18 4 piano/notemap <mapnr>;
+#X obj 204 341 i 21;
+#X obj 5 423 t f b;
+#X obj 40 86 i 21;
+#X obj 39 112 + 1;
+#X obj 202 53 i 21;
+#X obj 201 75 - 1;
+#X obj 175 102 tgl 15 0 /piano/\$1/notmap_vis /piano/\$1/notmap_vis
+nm_vis 17 7 0 10 -257985 -1 -1 0 1;
+#X obj 238 103 tgl 15 0 /piano/\$1/notemap/v /piano/\$1/notemap/v v_nm
+17 7 0 8 -241291 -1 -1 0 1;
+#X floatatom 193 271 5 0 0 3 reptime - -, f 5;
+#X floatatom 247 270 5 0 0 3 dur - -, f 5;
+#X obj 204 401 makenote 100 500;
+#X msg 359 255 500;
+#X msg 358 278 200;
+#X msg 357 234 256;
+#X symbolatom 103 238 28 0 0 0 - /piano/#1/notemap/filename -, f 28
+;
+#X obj 239 221 bng 15 250 50 0 /piano/\$1/notemap/linear /piano/\$1/notemap/linear
+lin 17 7 0 10 -260097 -1 -1;
+#X obj 205 383 unpack 21 100;
+#X obj 204 420 pack 21 100;
+#X obj 262 126 tgl 15 0 empty empty h_nr 17 7 0 8 -262144 -1 -1 0 1
+;
+#X obj 313 105 pack 0 \$0;
+#N canvas 5 171 177 172 \$0-nnr 0;
+#X text 4 86 A4 ... 69 ... a';
+#X text 4 21 A0 ... 21 ... A'';
+#X text 4 35 C1 ... 24 ... C';
+#X text 3 49 C2 ... 36 ... C;
+#X text 4 62 C3 ... 48 ... c;
+#X text 4 75 C4 ... 60 ... c';
+#X text 3 99 C5 ... 72 ... c'';
+#X text 4 112 C6 ... 84 ... c''';
+#X text 4 128 C7 ... 96 ... c'''';
+#X text 2 144 C8 ... 108 ... c''''';
+#X text 6 4 notes_and_numbers;
+#X restore 315 60 pd \$0-nnr;
+#X msg 314 125 \; pd-\$2-nnr vis \$1;
+#X obj 105 122 bng 15 250 50 0 empty empty p 6 6 0 10 -262144 -1 -1
+;
+#X obj 204 362 pdpp/notemap/map \$1;
+#X obj 204 443 s /piano/\$1/finger;
+#X connect 7 0 26 1;
+#X connect 7 0 27 0;
+#X connect 7 0 35 0;
+#X connect 7 0 37 1;
+#X connect 7 0 39 1;
+#X connect 8 0 37 0;
+#X connect 9 0 39 0;
+#X connect 10 0 28 0;
+#X connect 11 0 45 1;
+#X connect 13 0 36 0;
+#X connect 25 0 6 0;
+#X connect 26 0 6 1;
+#X connect 27 0 13 0;
+#X connect 28 0 35 0;
+#X connect 33 0 48 0;
+#X connect 33 0 46 0;
+#X connect 33 0 47 0;
+#X connect 35 0 58 0;
+#X connect 36 0 25 0;
+#X connect 36 1 26 0;
+#X connect 37 0 38 0;
+#X connect 38 0 7 0;
+#X connect 39 0 40 0;
+#X connect 40 0 7 0;
+#X connect 43 0 28 1;
+#X connect 44 0 45 2;
+#X connect 45 0 52 0;
+#X connect 45 1 52 1;
+#X connect 46 0 43 0;
+#X connect 47 0 44 0;
+#X connect 48 0 11 0;
+#X connect 51 0 45 0;
+#X connect 52 0 59 0;
+#X connect 53 0 54 0;
+#X connect 54 0 56 0;
+#X connect 57 0 35 0;
+#X connect 58 0 51 0;
+#X coords 0 -1 1 1 200 200 1 100 100;

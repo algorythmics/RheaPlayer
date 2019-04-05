@@ -1,0 +1,18 @@
+#N canvas 245 407 307 217 10;
+#X text 133 48 get_ticks ?;
+#X obj 7 137 outlet;
+#X obj 129 20 inlet timestamp;
+#X obj 7 104 pack 0 0 0 0 1;
+#X obj 7 77 t b;
+#X obj 7 18 inlet allnotesoff;
+#X text 7 152 <timestamp(4B)> <type(1B)>;
+#X text 118 104 all notes off type = 1;
+#X obj 131 68 pde/w2b;
+#X connect 2 0 8 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 8 0 3 0;
+#X connect 8 1 3 1;
+#X connect 8 2 3 2;
+#X connect 8 3 3 3;

@@ -1,0 +1,41 @@
+#N canvas 614 266 450 317 10;
+#X obj 244 71 text define -k ips;
+#A set #scene 0 \; /rhea/1/ip 192.168.10.129 \; /rhea/1/portnr 6000
+\; /rhea/2/ip 192.168.10.130 \; /rhea/2/portnr 6000 \; /rhea/3/ip 192.168.10.131
+\; /rhea/3/portnr 6000 \; /rhea/4/ip 192.168.10.132 \; /rhea/4/portnr
+6000 \; /rhea/5/ip 192.168.10.133 \; /rhea/5/portnr 6000 \; /rhea/6/ip
+192.168.10.134 \; /rhea/6/portnr 6000 \; /rhea/7/ip 192.168.10.135
+\; /rhea/7/portnr 6000 \; /rhea/8/ip 192.168.10.136 \; /rhea/8/portnr
+6000 \; /rhea/9/ip 192.168.10.137 \; /rhea/9/portnr 6000 \; /rhea/10/ip
+192.168.10.138 \; /rhea/10/portnr 6000 \; /rhea/11/ip 192.168.10.139
+\; /rhea/11/portnr 6000 \; /rhea/12/ip 192.168.10.140 \; /rhea/12/portnr
+6000 \; #scene 1 \;;
+#X obj 9 202 text search ips;
+#X obj 9 227 text get ips 1;
+#X obj 244 29 loadbang;
+#X msg 244 50 read -c ../data/rhea.txt;
+#X text 16 56 Use rhea.txt for infos about rhea;
+#X obj 9 78 inlet;
+#X text 18 24 pdpp/rhea/ip <number of rhea>;
+#X obj 9 109 f \$1;
+#X obj 9 278 outlet;
+#X obj 9 257 pack s 6000;
+#X obj 141 203 text search ips;
+#X obj 141 228 text get ips 1;
+#X msg 9 170 symbol /rhea/\$1/ip;
+#X msg 141 171 symbol /rhea/\$1/portnr;
+#X obj 9 130 t f f;
+#X text 242 88 Use object only once;
+#X connect 1 0 2 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 8 0;
+#X connect 8 0 15 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 13 0 1 0;
+#X connect 14 0 11 0;
+#X connect 15 0 13 0;
+#X connect 15 1 14 0;

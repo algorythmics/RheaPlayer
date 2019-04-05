@@ -1,0 +1,23 @@
+#N canvas 702 58 450 377 10;
+#X obj 11 11 cnv 15 198 198 empty empty MIDIIN_\$1 3 10 0 14 -4032
+-66577 0;
+#X obj 79 57 nbx 2 14 0 16 0 0 /piano/\$1/midiin/ch /piano/\$1/midiin/ch
+channel 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 18 39 tgl 45 0 /piano/\$1/midiin/on /piano/\$1/midiin/on ON
+8 24 0 24 -4034 -1 -1 0 1;
+#X obj -100 10 r /piano/\$1/ip;
+#X msg -100 30 set \$1;
+#X obj 152 14 tgl 15 0 /piano/\$1/midiin/v /piano/\$1/midiin/v v_midi
+17 7 0 10 -257985 -1 -1 0 1;
+#X text 23 135 ------ VELOCITY MAP -------;
+#X obj 27 121 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/midiin/transpose
+/piano/\$1/midiin/transpose transpose 0 -8 0 10 -262144 -1 -1 0 256
+;
+#X text 114 56 0=all;
+#X obj 95 122 nbx 4 14 -1e+37 1e+37 0 0 /piano/\$1/midiin/vel /piano/\$1/midiin/vel
+velocity 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 175 47 vu 15 80 /piano/\$1/midiin/vu empty -1 -8 0 10 -66577
+-1 0 0;
+#X obj 10 160 ../veltab/ctl /midi/\$1/veltab;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 200 200 1 10 10;

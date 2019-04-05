@@ -1,0 +1,5 @@
+#N canvas 504 434 450 144 10;
+#X obj 54 55 ds/register_map /rhea /piano/\$1/ip;
+#X obj 52 101 ds/register_map /rhea /piano/\$1/on;
+#X obj 54 76 ds/register_map /rhea /piano/\$1/portnr;
+#X text 51 14 For use with the datastorage library of acre;
