@@ -1,4 +1,4 @@
-#N canvas 85 58 727 438 12;
+#N canvas 85 58 727 632 12;
 #X declare -path . -path abs -path data -path libs/pdpp/data -path
 libs -path libs/cyclone -path libs/iemlib -lib iemlib -lib zexy;
 #N canvas 434 277 694 359 declares 0;
@@ -24,9 +24,9 @@ and releases included);
 #X text 10 52 Needed external Libs: iemlib \, zexy (included in Releases
 for Linux \, OS-X and Windows);
 #X restore 44 38 pd declares;
-#N canvas 410 321 687 590 GUI 1;
+#N canvas 410 321 727 605 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
-#X obj 233 76 pdpp/iface/osc_ctl 1;
+#X obj 235 76 pdpp/iface/osc_ctl 1;
 #X obj 30 285 pdpp/noteeq/ctl 1;
 #X obj 29 368 pdpp/test/arp 1;
 #X obj 29 418 pdpp/test/note 1;
@@ -45,8 +45,13 @@ for Linux \, OS-X and Windows);
 #X obj 239 368 pdpp/iface/mifi_ctl 1;
 #X obj 439 368 pdpp/iface/mifi_ctl 2;
 #X text 27 13 RheaPlayer Interface V1.0z;
-#X obj 258 293 bng 45 250 50 0 allnotesoff allnotesoff AllNotesOff
+#X obj 249 293 bng 45 250 50 0 allnotesoff allnotesoff AllNotesOff
 -5 -7 0 10 -258113 -1 -1;
+#X text 304 290 Beware: If a MIDI note loops in the MIDI connection
+\, software or hardware \, this does not help. Please correct your
+system (happened sometimes and burns solenoids !!!);
+#X text 246 575 MIDIfile player sometimes forget to play all note off
+!;
 #X restore 43 88 pd GUI;
 #N canvas 364 58 912 624 init 0;
 #X obj 41 94 t b b b;
@@ -207,23 +212,44 @@ with midifiles;
 #X text 125 92 Graphical User Interface;
 #X text 438 131 --- OSC-Interface: piano and raw ---;
 #X obj 440 180 s note;
-#X obj 440 264 s note;
+#X obj 440 263 s note;
 #X obj 489 237 pdpp/iface/mifi 2;
 #X text 45 8 Rheaplayer V-1.1 (GPLv3);
 #X text 316 39 special for IEM Lehrstudio and CUBE \, but also for
 others;
-#N canvas 146 619 450 300 AllNotesOff 0;
-#X text 174 200 direct note all off to player;
-#X obj 42 199 pdpp/rhea/alloff;
+#N canvas 146 619 866 423 AllNotesOff 0;
+#X text 204 217 direct note all off to player;
+#X obj 72 216 pdpp/rhea/alloff;
 #X obj 40 155 r allnotesoff;
-#X obj 50 249 s /pde/1/send;
-#X obj 158 252 s /pde/2/send;
-#X obj 63 72 bng 45 250 50 0 allnotesoff allnotesoff AllNotesOff -5
--7 0 10 -258113 -1 -1;
+#X obj 80 266 s /pde/1/send;
+#X obj 188 269 s /pde/2/send;
+#X obj 275 153 bng 45 250 50 0 allnotesoff allnotesoff AllNotesOff
+-5 -7 0 10 -258113 -1 -1;
+#X text 142 157 hardware off;
+#X obj 40 324 for++ 19 108 0;
+#X obj 40 348 pack 19 0;
+#X obj 40 372 s note;
+#X obj 40 179 t b b;
+#X text 176 326 generates note off for all keys;
+#X text 45 44 All notes off;
+#X text 47 82 Beware: If a MIDI note loops in the MIDI connection \,
+software or hardware \, this does not help. Please correct your system
+(happened sometimes and burns solenoids !!!);
 #X connect 1 0 3 0;
 #X connect 1 0 4 0;
-#X connect 2 0 1 0;
+#X connect 2 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 7 0;
+#X connect 10 1 1 0;
+#X connect 10 1 4 0;
+#X connect 10 1 3 0;
 #X restore 39 195 pd AllNotesOff;
+#X obj 440 289 r /mifi/1/stop;
+#X obj 565 290 r /mifi/1/end;
+#X obj 441 314 r /mifi/1/stop;
+#X obj 566 315 r /mifi/1/end;
+#X obj 498 348 s allnotesoff;
 #X connect 6 0 11 0;
 #X connect 8 0 15 0;
 #X connect 10 0 26 0;
@@ -231,3 +257,7 @@ others;
 #X connect 18 0 27 0;
 #X connect 19 0 21 0;
 #X connect 28 0 27 0;
+#X connect 32 0 36 0;
+#X connect 33 0 36 0;
+#X connect 34 0 36 0;
+#X connect 35 0 36 0;
