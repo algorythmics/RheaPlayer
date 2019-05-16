@@ -24,7 +24,7 @@ and releases included);
 #X text 10 52 Needed external Libs: iemlib \, zexy (included in Releases
 for Linux \, OS-X and Windows);
 #X restore 44 38 pd declares;
-#N canvas 589 88 687 590 GUI 1;
+#N canvas 410 321 687 590 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
 #X obj 233 76 pdpp/iface/osc_ctl 1;
 #X obj 30 285 pdpp/noteeq/ctl 1;
@@ -37,7 +37,7 @@ for Linux \, OS-X and Windows);
 7 0 10 -262144 -1 -1;
 #X text 28 47 1);
 #X obj 120 36 tgl 15 0 setup-vis setup-vis setup 17 7 0 10 -257985
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 435 76 pdpp/iface/midiin_ctl 1;
 #X text 72 342 --- TESTS ---;
 #X text 355 342 --- MIDI-File Player ---;
@@ -45,6 +45,8 @@ for Linux \, OS-X and Windows);
 #X obj 239 368 pdpp/iface/mifi_ctl 1;
 #X obj 439 368 pdpp/iface/mifi_ctl 2;
 #X text 27 13 RheaPlayer Interface V1.0z;
+#X obj 258 293 bng 45 250 50 0 allnotesoff allnotesoff AllNotesOff
+-5 -7 0 10 -258113 -1 -1;
 #X restore 43 88 pd GUI;
 #N canvas 364 58 912 624 init 0;
 #X obj 41 94 t b b b;
@@ -180,21 +182,19 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X connect 35 0 34 0;
 #X restore 44 62 pd init;
 #X text 127 63 Initialize Patch;
-#X text 175 175 direct note all off to player;
 #X text 40 153 --- commands ---;
-#X text 43 354 --- ctl for calibration: copy and edit for your controller
+#X text 42 379 --- ctl for calibration: copy and edit for your controller
 ---, f 65;
-#X obj 45 217 r note;
-#X obj 45 268 s /piano/1/note;
-#X obj 45 308 r /piano/1/note;
-#X text 43 288 --- piano simulator ---;
+#X obj 44 242 r note;
+#X obj 44 293 s /piano/1/note;
+#X obj 44 333 r /piano/1/note;
+#X text 42 313 --- piano simulator ---;
 #X obj 440 156 pdpp/iface/osc 1;
-#X obj 45 243 pdpp/noteeq/map 1;
-#X obj 176 243 pdpp/noteeq/store 1;
+#X obj 44 268 pdpp/noteeq/map 1;
+#X obj 175 268 pdpp/noteeq/store 1;
 #X obj 43 133 pdpp/rhea/rhea 1;
-#X obj 43 174 pdpp/rhea/alloff;
-#X obj 45 375 pdpp/iface/controller;
-#X obj 45 333 pdpp/iface/midiout 1;
+#X obj 44 400 pdpp/iface/controller;
+#X obj 44 358 pdpp/iface/midiout 1;
 #X text 126 39 Declares for patch;
 #X text 445 55 --- Interfaces ---;
 #X obj 440 212 pdpp/iface/mifi 1;
@@ -202,7 +202,7 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X text 320 7 For operating a Rheaplayer via \, Pd \, OSC \, MIDI or
 with midifiles;
 #X obj 437 102 s note;
-#X text 43 200 --- receive not eq and send to piano ---;
+#X text 42 225 --- receive not eq and send to piano ---;
 #X text 40 114 --- complete rhea processing with stack ---;
 #X text 125 92 Graphical User Interface;
 #X text 438 131 --- OSC-Interface: piano and raw ---;
@@ -212,10 +212,22 @@ with midifiles;
 #X text 45 8 Rheaplayer V-1.1 (GPLv3);
 #X text 316 39 special for IEM Lehrstudio and CUBE \, but also for
 others;
-#X connect 7 0 12 0;
-#X connect 9 0 17 0;
-#X connect 11 0 28 0;
-#X connect 12 0 8 0;
-#X connect 20 0 29 0;
-#X connect 21 0 23 0;
-#X connect 30 0 29 0;
+#N canvas 146 619 450 300 AllNotesOff 0;
+#X text 174 200 direct note all off to player;
+#X obj 42 199 pdpp/rhea/alloff;
+#X obj 40 155 r allnotesoff;
+#X obj 50 249 s /pde/1/send;
+#X obj 158 252 s /pde/2/send;
+#X obj 63 72 bng 45 250 50 0 allnotesoff allnotesoff AllNotesOff -5
+-7 0 10 -258113 -1 -1;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X restore 39 195 pd AllNotesOff;
+#X connect 6 0 11 0;
+#X connect 8 0 15 0;
+#X connect 10 0 26 0;
+#X connect 11 0 7 0;
+#X connect 18 0 27 0;
+#X connect 19 0 21 0;
+#X connect 28 0 27 0;

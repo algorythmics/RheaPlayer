@@ -18,7 +18,7 @@
 #X obj 493 181 r /piano/\$1/osc/midi/on;
 #X obj 460 247 oscparse midi note;
 #X obj 12 92 oscparse;
-#X text 206 278 /piano/<nr>/note <midinote><velocity>;
+#X text 206 277 /piano/<nr>/note <midinote><velocity>;
 #X obj 12 263 route note allNotesOff;
 #X obj 12 138 route piano;
 #X obj 12 116 list trim;
