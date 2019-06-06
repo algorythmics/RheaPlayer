@@ -1,0 +1,53 @@
+MIDI-File checking and optional converting for Autoklavierspieler
+V 0.97, (c) IEM+Algorythmics 2005-2016
+
+
+ usage: bin/midiconv [-<options>] [<midi-file-in>]
+
+options:
+
+ -v <n> verbosity during reading (0=no,1=errors,2=+trks,3=debug)
+ -w <n> verbosity during check in (0=no,1=errors,2=+warnings,3=debug)
+ -y <n> verbosity during changing (0=no,1=errors,2=+warnings,3=debug)
+ -q ... quiet, no control output
+
+Verbosity for analyzing during read:
+ -f[h|H][t|T][m|M][s|S][e|E] ... output print format
+        h/H ... no header/print header
+        t/T ... no track header/print track header
+        m/M ... no Metaevents/print Metaevents
+        s/S ... no SYSEX/print SYSEX
+        e/E ... no MIDI Event/print MIDI Event
+        q/A ... no printing/printing ALL
+        w/W ... no warnings/Warnings
+
+Verbosity during checking for notelength and pauselength:
+ -c[p|P][v|V][c|C][q|A] ... check print format
+        p/P ... no pause-warnings/print pausen-warnings
+        v/V ... no velocity-statistics/print velocity-statistics
+        r/R ... no repetition times/ print repetition times
+        c/C ... no pairing details/print pairing details
+        q/A ... no printing/printing ALL
+
+
+Output if execute is set 
+ -x ... execute changes for file output (do change)
+ -xf ... execute changes for file output (do change) drop check-errors
+ -o <midi-file-out> ... output to file output
+
+Parameter for checking and changing the MIDIFile:
+ -m <mode> ...  modification mode (default 0)
+    mode 0: pause, notelength correction
+       -p <minimum note pause> ... set minimal note pause (default=40) in ms
+       -l <minimum note duration> ... set minimal note duration (default=70) ms
+       -d  delete note if minimum length cannot be set instead of leaving to short
+    mode 10: pairing, sequence of notes are combined using duration_table
+       -r <repetion time> ... set repetition time (frametime) ms, if 0 measured
+       -s <pair veldiff> ... set velocity difference to detect pair (default = 0, -127...127)
+       -t <max pair count> ... set maximum pair count (default=2, infinite=0)
+       -u <scale vel> ... scale pair velocity (default=0.5, 0..min vil, 1...max_vel)
+    mode 20: dyn pairing, sequence of notes are combined using duration_table sorted by dyn 
+       -r <repetion time> ... set repetition time (frametime) ms, if 0 measured
+       -s <pair veldiff> ... set velocity difference to detect pair (default = 0, -127...127)
+       -t <max pair count> ... set maximum pair count (default=2, infinite=0)
+       -u <scale vel> ... scale pair velocity (default=0.5, 0..min vil, 1...max_vel)

@@ -1,0 +1,14 @@
+# midi conv makefile for mingw32
+#  Winfried Ritsch
+#
+#  Feb 2008
+
+OPTS="-DMF_OLDNAMES -DNT"
+CC=i586-mingw32msvc-gcc
+
+
+midiconv.exe: midiconv.c midilib/midifile.obj
+	$(CC) $(OPTS) -o midiconv.exe -Imidilib/ midilib/midifile.obj midiconv.c
+
+midilib/midifile.obj: midilib/midifile.c midilib/midifile.h midilib/mididefs.h
+	$(CC) $(OPTS) -c -o $@  midilib/midifile.c
