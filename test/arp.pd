@@ -36,12 +36,8 @@
 -1 -1 108 256;
 #X obj 268 103 nbx 3 14 0 128 0 0 empty empty vel -15 8 0 8 -262144
 -1 -1 80 256;
-#X obj 395 263 nbx 3 14 -1e+37 1e+37 0 0 empty empty from 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 340 274 nbx 3 14 -1e+37 1e+37 0 0 empty empty vel -15 8 0 8
--262144 -1 -1 0 256;
 #X obj 159 132 nbx 4 14 0.01 9999 1 0 empty empty time 0 -6 0 10 -262144
--1 -1 9473.69 256;
+-1 -1 100 256;
 #X obj 262 131 nbx 3 14 -1e+37 1e+37 0 0 empty empty N -8 8 0 10 -228856
 -1 -1 0 256;
 #X obj 206 132 nbx 4 14 1 99999 0 0 empty empty len 0 -6 0 10 -262144
@@ -57,7 +53,7 @@
 #X connect 9 0 3 0;
 #X connect 9 0 8 0;
 #X connect 9 0 15 0;
-#X connect 9 0 34 0;
+#X connect 9 0 32 0;
 #X connect 10 0 9 1;
 #X connect 11 0 15 1;
 #X connect 12 0 10 0;
@@ -67,10 +63,10 @@
 #X connect 13 0 23 0;
 #X connect 13 0 21 0;
 #X connect 13 0 22 0;
-#X connect 14 0 35 0;
+#X connect 14 0 33 0;
 #X connect 15 0 12 0;
 #X connect 18 0 2 1;
-#X connect 20 0 33 0;
+#X connect 20 0 31 0;
 #X connect 21 0 29 0;
 #X connect 22 0 28 0;
 #X connect 23 0 30 0;
@@ -81,6 +77,6 @@
 #X connect 28 0 10 1;
 #X connect 29 0 11 0;
 #X connect 30 0 3 1;
-#X connect 33 0 18 0;
-#X connect 35 0 6 0;
+#X connect 31 0 18 0;
+#X connect 33 0 6 0;
 #X coords 0 -1 1 1 200 50 1 100 100;
