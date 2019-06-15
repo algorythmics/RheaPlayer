@@ -1,4 +1,4 @@
-#N canvas 4 58 450 300 10;
+#N canvas 873 179 450 300 10;
 #X obj 36 49 inlet;
 #X obj 36 232 outlet;
 #X obj 36 80 unpack 60 100;
@@ -11,10 +11,10 @@
 #X text 35 32 use veltab used with veltabstore <id>;
 #X text 36 14 pdpp/veltab/map <id>;
 #X obj 162 148 tabread \$1;
-#X obj 266 191 print vt-\$1;
+#X obj 212 249 print vt-\$1;
 #X obj 295 116 r \$1/v;
-#X obj 266 149 pack 0 0;
-#X obj 266 170 spigot;
+#X obj 212 207 pack 0 0;
+#X obj 212 228 spigot;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
 #X connect 2 1 5 0;
