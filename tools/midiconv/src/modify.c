@@ -1,5 +1,5 @@
 /************************************************************/
-/*    Midifile Korrektur und Tester für Klavier             */
+/*  Midifile Correction and Tester for robotic piano player */
 /*    change by mode                                        */
 /*    winfried ritsch  (sept 2005-)                         */
 /************************************************************/

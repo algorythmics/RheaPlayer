@@ -1,5 +1,5 @@
 /************************************************************/
-/*    Midifile Korrektur und Tester für Klavier             */
+/*  Midifile Correction and Tester for robotic piano player */
 /*    parse Midifile and sort in note slots                  */
 /*    winfried ritsch  (sept 2005-)                         */
 /************************************************************/

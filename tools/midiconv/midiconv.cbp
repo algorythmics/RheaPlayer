@@ -59,7 +59,6 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="README.txt" />
-		<Unit filename="doku/Ideen.txt" />
 		<Unit filename="doku/devnotes.txt" />
 		<Unit filename="makefile" />
 		<Unit filename="midilib/mididefs.h" />

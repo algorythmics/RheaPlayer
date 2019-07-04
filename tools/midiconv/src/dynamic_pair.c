@@ -1,10 +1,13 @@
 /************************************************************/
-/*    Midifile Korrektur und Tester für Klavier             */
-/*    Simple Pairing on Dur_notes                                      */
+/*  Midifile Correction and Tester for robotic piano player */
+/*    Simple Pairing on Dur_notes                           */
 /*    winfried ritsch  (sept 2005-)                         */
 /************************************************************/
-/* in modify flags for events and event data is changed,
-   but never deleted. This will be done by storage functions */
+/*
+Note:
+on modification flags for events and event data is changed,
+but never deleted. This has to be done by storage functions
+*/
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>

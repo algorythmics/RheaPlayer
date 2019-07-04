@@ -1,6 +1,6 @@
 /************************************************************/
-/*    Midifile Korrektur und Tester für Klavier             */
-/*    Simple Pairing on Dur_notes                                      */
+/*  Midifile Correction and Tester for robotic piano player */
+/*    Simple Pairing on Dur_notes                           */
 /*    winfried ritsch  (sept 2005-)                         */
 /************************************************************/
 /* in modify flags for events and event data is changed,

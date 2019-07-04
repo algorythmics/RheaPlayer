@@ -1,5 +1,5 @@
 /************************************************************/
-/*    Midifile Korrektur und Tester für Klavier             */
+/*  Midifile Correction and Tester for robotic piano player */
 /*    Optimierung zur wiedergabe bei sprache                */
 /*    winfried ritsch  (sept 2005-)                         */
 /************************************************************/
