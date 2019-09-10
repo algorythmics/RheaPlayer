@@ -20,16 +20,16 @@ Data for different piano player numbered from 1..N, where the first rhea series 
 They can be overwritten with local calibration data files in own patches.
 
 notemaps 
-.. mapping of key numbers for eschers to MIDI-Note numbers
+  mapping of key numbers for eschers to MIDI-Note numbers
 
 holds
-.. default hold value to provide a secure hold.
+  default hold value to provide a secure hold.
 
 minmaxs
-.. maximum and minimum velocities. Note that these can be adjusted for each piano different should be done like this.
+  maximum and minimum velocities. Note that these can be adjusted for each piano different should be done like this.
  
 veltabs
-.. mapping MIDI velocity to key velocities.
+  mapping MIDI velocity to key velocities.
 
 theory of operation
 -------------------
@@ -45,34 +45,34 @@ See in the "*_ctl.pd" patches which variables as send/receives are exposed.
 Functionalities are grouped in sub-folders listed below:
 
 data
-..  initial data for the pianoplayers
+   initial data for the pianoplayers
 
 examples
-..  example patches and help patches for using pdpp
+   example patches and help patches for using pdpp
 
 hold
-..  controlling the "hold" phase after the each attack
+   controlling the "hold" phase after the each attack
 
 iface
-..  interfaces 
+   interfaces 
 
 minmax
-..  handling and edit calibration for minimal and maximal velocities for each note
+   handling and edit calibration for minimal and maximal velocities for each note
 
 noteeq
-..  a halftone-filter eq, controlling the velocity distribution
+   a halftone-filter eq, controlling the velocity distribution
 
 np
-..  note processing functions for manipulation notes
+   note processing functions for manipulation notes
 
 rhea
-..  controlling a pianoplayer of the series rhea 
+   controlling a pianoplayer of the series rhea 
 
 test
-..  test functionalities
+   test functionalities
 
 veltab
-..  velocities mapping
+   velocities mapping
 
 Notes
 -----
