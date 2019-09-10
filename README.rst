@@ -1,7 +1,7 @@
 pde
 ===
 
-Puredata escher library of of Puredata abstractions for controlling "EscherFetOS" running on an 'escher' board controlling a escherFET interface driving the solenoids for e.g.: the pianoplayers
+Puredata escher library as abstractions for controlling "EscherFetOS" running on an 'escher' board controlling  escherFET interfaces driving the solenoids for e.g.: the pianoplayer
 
 Background
 ----------
@@ -20,9 +20,9 @@ e.g.: http://github.com/algorythmics/pianoplayer.
 Theory of operation:
 --------------------
 
-The 'escher' has a Ethernet Port with unique MAC address and an fixed assigned IP address (static at the moment). The boards broadcasts UDP over the local net on the fixed info PORT number <announce-port>  and announce themselves with IP and MAC number. Afterwards they can be addressed by these IP-numbers. Also statistics like CPU-usage are reported over the the announce port.
+The 'escher' has a Ethernet Port with unique MAC address and an assigned IP address (static at the moment). The boards broadcasts UDP over the local net on the fixed info PORT number <announce-port>  and announce themselves with IP and MAC number. Afterwards they can be addressed by these IP-numbers. Also statistics like CPU-usage are reported over the the announce port.
 
-Parsing and construction of the pde-syntax is done by helper functions, so each command implemented in the EscherOS has a corresponded pde object. These are prepared with optional control interface (GUI), see help files for details.
+Parsing and construction of the pde-syntax is done by helper functions, so each command implemented in the EscherOS has a corresponded pde object. These are combined with optional control interface (GUI), see help files for details.
 
 Info
 ----
