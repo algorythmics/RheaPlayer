@@ -1,18 +1,16 @@
-#N canvas 85 58 727 632 12;
+#N canvas 532 87 727 632 12;
 #X declare -path . -path abs -path data -path libs/pdpp/data -path
-libs -path libs/cyclone -path libs/iemlib -lib iemlib -lib zexy;
+libs -path libs/cyclone -path libs/iemlib -path cyclone -path iemlib
+-lib iemlib -lib zexy;
 #N canvas 434 277 694 359 declares 0;
 #X text 16 1 --- path for Pd abstractions \, data \, libs ... ---;
-#X text 10 135 a) paths for the projects;
+#X text 8 144 a) paths for the projects;
 #X text 11 162 b) paths and libs for libraries in project;
 #X text 25 218 Linux: .local/lib/Pd/extra \, /usr/[local/]lib/pd/extra
 ;
 #X text 25 234 OS-X: ~/Library/Pd \, /Library/Pd \, /Applications/Pd/...
 ;
 #X text 40 181 Note the order \, locals first can overwrite libs;
-#X obj 7 95 declare -path . -path abs -path data -path libs/pdpp/data
--path libs -path libs/cyclone -path libs/iemlib -lib iemlib -lib zexy
-, f 70;
 #X text 9 315 Note: for Pd V0.49+ the order of the declare "-lib" statements
 should be after the "-path libs";
 #X text 12 263 Hint: Copy all your libraries to the libs folder to
@@ -23,8 +21,11 @@ get control over the correct version;
 and releases included);
 #X text 10 52 Needed external Libs: iemlib \, zexy (included in Releases
 for Linux \, OS-X and Windows);
+#X obj 7 95 declare -path . -path abs -path data -path libs/pdpp/data
+-path libs -path libs/cyclone -path libs/iemlib -path cyclone -path
+iemlib -lib iemlib -lib zexy, f 70;
 #X restore 44 38 pd declares;
-#N canvas 410 321 727 605 GUI 1;
+#N canvas 1086 214 727 605 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
 #X obj 235 76 pdpp/iface/osc_ctl 1;
 #X obj 30 285 pdpp/noteeq/ctl 1;
@@ -53,7 +54,7 @@ system (happened sometimes and burns solenoids !!!);
 #X text 246 575 MIDIfile player sometimes forget to play all note off
 !;
 #X restore 43 88 pd GUI;
-#N canvas 364 58 912 624 init 0;
+#N canvas 254 278 912 699 init 1;
 #X obj 41 94 t b b b;
 #X text 160 56 Initial values set after loading;
 #X msg 101 122 --- patch main loaded --- \;;
@@ -160,12 +161,12 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X msg 41 533 --- dsp start/stop --- \; pd dsp \$1;
 #X obj 40 487 i 0;
 #X obj 74 452 r /piano/1/dsp;
-#X msg 262 537 \; /piano/\$1/notemap/rheanr \$2 \; /piano/\$1/hold/rheanr
-\$2 \; /piano/\$1/notemins/read symbol ../../../data/minmaxs/notemins-\$2.txt
-\; /piano/\$1/notemaxs/read symbol ../../../data/minmaxs/notemaxs-\$2.txt
-\; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;, f 71;
 #X msg 239 646 \; /piano/\$1/notemap/read symbol notemaps/rhea_\$2_notemap.txt
 \;, f 71;
+#X msg 262 537 \; /piano/\$1/notemap/rheanr \$2 \; /piano/\$1/hold/rheanr
+\$2 \; /piano/\$1/notemins/read symbol ../data/minmaxs/notemins\$2.txt
+\; /piano/\$1/notemaxs/read symbol ../data/minmaxs/notemaxs\$2.txt
+\; /piano/\$1/main_min 0 \; /piano/\$1/main_max 0 \;, f 71;
 #X connect 0 0 34 0;
 #X connect 0 1 32 0;
 #X connect 0 2 2 0;
@@ -177,7 +178,7 @@ symbol ../../../data/mifi-1-veltab.txt \; /mifi/2/veltab/read symbol
 #X connect 19 0 20 0;
 #X connect 21 0 10 0;
 #X connect 22 0 24 0;
-#X connect 23 0 36 0;
+#X connect 23 0 37 0;
 #X connect 24 0 23 0;
 #X connect 24 1 23 1;
 #X connect 25 0 26 0;
