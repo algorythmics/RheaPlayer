@@ -3,19 +3,21 @@ pdpp
 Pd Piano Player Library
 -----------------------
 
-Pd abstractions and presets for playing different robotic piano player of the Atelier Algorythmics, especially the series rhea, dor robotic piano player see.
+Pd abstractions and presets for playing different robotic piano player of the Atelier Algorythmics, especially the series rhea but also others.
 
-Tested Pd >= 0.48, and the libraries pde, iemlib and zexy is needed (see find externals) 
-For communication with rhea the pde library at https://github.com/algorythmics/pdpp is used, older version of the pianoplayer like millitron and kantor have to use other communication library via serial ports.
+Tested Pd >= 0.48,  libraries pde, iemlib and zexy are needed (see find externals) 
 
-For robotic piano players see: http://algo.mur.at/projects/autoklavierspieler/
+For communication with rhea the pde library ( https://github.com/algorythmics/pde ) is used.
+Older version of the pianoplayer like millitron and kantor have to use an other communication library using serial ports.
 
-see also examples and abstractions for help
+Robotic piano players see: http://algo.mur.at/projects/autoklavierspieler/
+
 
 settings and presets
 --------------------
 
-Data for different piano player numbered from 1..N, where the first rhea series is 1..12 . They can be overwritten with local calibration data files in own patches.
+Data for different piano player numbered from 1..N, where the first rhea series is 1..12 are included. 
+They can be overwritten with local calibration data files in own patches.
 
 notemaps
    mapping of key numbers for eschers to MIDI-Note numbers
@@ -28,17 +30,19 @@ minmaxs
  
 veltabs
  mapping MIDI velocity to key velocities.
- 
- 
+
 theory of operation
 -------------------
 
-receive a "midi note" as notenumber and a velocity as float, send it through an "noteeq" to a "pianostack", which holds all stages from note to key mapping until calibration and velocity mapping and sends it via the "pde" lib to the piano player.
+Receive a "midi note" as note number and a velocity list, send it through an "noteeq" to a "pianostack", 
+which process data from note to key mapping until calibration and velocity mapping and sends it via the "pde" lib to the piano player.
 
-most functionalities has an GUI named with '<func>_ctl.pd'. Variable names aka 'send/receives' are named in an OSC like notation.
-Varialbles controlling a piano start with /piano/.. other with the interface names. See in the _ctl.pd patches which variables are exposed.
+Most functionalities has an GUI named with '<func>_ctl.pd'. 
+Variable names aka 'send/receives' are named in an OSC like notation.
+Varialbles controlling a piano start with "/piano/.." the other with their interface names. 
+See in the "*_ctl.pd" patches which variables as send/receives are exposed.
 
-functionalities are grouped in sub-folders listed below:
+Functionalities are grouped in sub-folders listed below:
 
 data
   initial data for the pianoplayers
@@ -57,13 +61,13 @@ minmax
 
 noteeq
   a halftone-filter eq, controlling the velocity distribution
-  
+
 np
-  note processing functions 
-  
+  note processing functions for manipulation notes
+
 rhea
   controlling a pianoplayer of the series rhea 
-  
+
 test
   test functionalities
 
@@ -73,10 +77,14 @@ veltab
 Notes
 -----
 
-Note 1: with acre/ds datastorage for pianos can be used.
+- with acre/ds datastorage for pianos can be used.
+
+- noteprocessor handles "pianonotes" and "midinotes" aka "notes",
+  where first contain the duration the other constructed with note ons and note offs.
+
 
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: GPL-v3: winfried ritsch -  algorythmics 2004+
-:Version: 1.0
+:Version: 1.1
 :Master: https://github.com/algorythmics/pdpp
