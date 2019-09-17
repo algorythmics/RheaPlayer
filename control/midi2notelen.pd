@@ -1,0 +1,15 @@
+#N canvas 1690 151 505 221 10;
+#X obj 23 72 mtof;
+#X obj 23 96 i;
+#X obj 23 121 + 30;
+#X obj 23 46 inlet;
+#X obj 23 143 outlet;
+#X text 75 71 some logarithmic function to map MIDI 0..127 to a notelen
+which makes sense \, but completly unrelated to some norm.;
+#X text 79 115 used with MIDI-controllers... mostly knobs;
+#X text 81 36 midi/midi2notelen;
+#X text 94 147 (c) GPL winfried ritsch;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;

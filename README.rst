@@ -74,6 +74,12 @@ test
 veltab
    velocities mapping
 
+control
+   simple MIDI-Controller and their mappings
+   
+vi
+    simple visualisation in sync with video and text (needs Gem library)
+   
 Notes
 -----
 

@@ -1,0 +1,24 @@
+#N canvas 1165 417 542 196 10;
+#X obj 101 101 cnv 15 198 48 empty empty pixinfo 2 6 0 8 -233017 -66577
+0;
+#X floatatom 104 113 4 0 0 1 width - -, f 4;
+#X floatatom 105 130 4 0 0 1 height - -, f 4;
+#X floatatom 184 118 4 0 0 1 bytes/pixel - -, f 4;
+#X floatatom 184 133 5 0 0 1 coulorspace - -, f 5;
+#X obj 98 54 pix_info . . . .;
+#X obj 92 21 inlet;
+#X obj 223 77 timer;
+#X obj 225 48 t b b;
+#X floatatom 184 102 5 0 0 0 - - -, f 5;
+#X text 225 101 ms;
+#X text 325 36 info about video in;
+#X connect 5 1 1 0;
+#X connect 5 2 2 0;
+#X connect 5 3 3 0;
+#X connect 5 4 4 0;
+#X connect 6 0 5 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 1 7 1;
+#X coords 0 -1 1 1 200 50 2 100 100;
