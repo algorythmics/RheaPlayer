@@ -1,0 +1,20 @@
+#N canvas 951 469 450 300 10;
+#X obj 101 101 cnv 15 198 48 empty empty gem 2 5 0 8 -233017 -66577
+0;
+#X obj 103 131 tgl 15 0 /vi/view/create /vi/view/create create 17 7
+0 10 -262144 -1 -1 1 1;
+#X obj 125 102 tgl 15 0 /vi/view/fullscreen /vi/view/fullscreen fullscreen
+17 7 0 8 -262144 -1 -1 0 1;
+#X obj 125 117 tgl 15 0 /vi/view/separateX /vi/view/separateX seperateX
+17 7 0 8 -262144 -1 -1 0 1;
+#X obj 210 114 nbx 4 10 -1e+37 1e+37 0 0 /vi/view/width /vi/view/width
+width 0 -4 0 8 -262144 -1 -1 1280 256;
+#X obj 251 114 nbx 4 10 -1e+37 1e+37 0 0 /vi/view/height /vi/view/height
+height 0 -4 0 8 -262144 -1 -1 960 256;
+#X obj 211 136 nbx 4 10 -1e+37 1e+37 0 0 /vi/view/offset_x /vi/view/offset_x
+offset_x 0 -4 0 8 -262144 -1 -1 0 256;
+#X obj 256 135 nbx 4 10 -1e+37 1e+37 0 0 /vi/view/offset_y /vi/view/offset_y
+offset_y 0 -4 0 8 -262144 -1 -1 0 256;
+#X obj 161 137 nbx 4 10 0 1e+37 0 0 /vi/view/devscreen /vi/view/devscreen
+devscreen 0 -4 0 8 -262144 -1 -1 0.5 256;
+#X coords 0 -1 1 1 200 50 2 100 100;

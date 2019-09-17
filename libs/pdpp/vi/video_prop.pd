@@ -1,0 +1,29 @@
+#N canvas 847 433 450 300 10;
+#X obj 89 120 route bang float;
+#X obj 91 163 symbol \$2;
+#X obj 48 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 91 185 get \$1;
+#X obj 91 207 s /vi/video/\$1/video;
+#X obj 292 109 r /vi/video/\$1/info;
+#X obj 292 131 route prop;
+#X obj 292 153 route \$2;
+#X obj 80 59 nbx 5 14 -1e+37 1e+37 0 0 /vi/video/\$1/\$2 /vi/video/\$1/\$2
+\$2 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 89 98 r /vi/video/\$1/\$2;
+#X obj 292 178 s /vi/video/\$1/\$2;
+#X msg 173 186 set \$1 \$2;
+#X obj 172 161 list prepend \$2;
+#X text 38 1 video_prop <video-id> <propname>;
+#X text 46 41 get;
+#X connect 0 0 1 0;
+#X connect 0 1 12 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 9 0 0 0;
+#X connect 11 0 4 0;
+#X connect 12 0 11 0;
