@@ -44,6 +44,9 @@ See in the "*_ctl.pd" patches which variables as send/receives are exposed.
 
 Functionalities are grouped in sub-folders listed below:
 
+control
+   some helper for MIDI-controller handling and mapping
+
 data
    initial data for the pianoplayers
 
