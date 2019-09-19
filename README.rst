@@ -79,7 +79,10 @@ control
    
 vi
     simple visualisation in sync with video and text (needs Gem library)
-   
+
+time
+    simple displays and conversions for time and MTC
+
 Notes
 -----
 
