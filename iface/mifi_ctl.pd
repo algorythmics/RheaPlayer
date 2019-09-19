@@ -74,8 +74,8 @@
 #X connect 30 0 21 0;
 #X coords 0 -1 1 1 200 50 1 100 100;
 #X restore 67 423 pd dt_edit \$1;
-#X obj 111 284 bng 15 250 50 0 /mifi/\$1/open /mifi/\$1/open open 17
-7 0 10 -262144 -1 -1;
+#X obj 99 284 bng 15 250 50 0 /mifi/\$1/open /mifi/\$1/open open 17
+7 0 10 -4032 -1 -1;
 #X obj 216 176 tgl 15 0 /mifi/\$1/loop /mifi/\$1/loop loop -25 7 0
 10 -262144 -1 -1 0 1;
 #X obj 73 190 bng 30 250 50 0 /mifi/\$1/start /mifi/\$1/start start
@@ -111,7 +111,7 @@ transpose 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 434 277 r /mifi/\$1/stop;
 #X obj 315 236 r /mifi/\$1/continue;
 #X msg 395 364 0;
-#X obj 164 283 bng 15 250 50 0 /mifi/\$1/load /mifi/\$1/load load 17
+#X obj 143 284 bng 15 250 50 0 /mifi/\$1/load /mifi/\$1/load load 17
 7 0 10 -4034 -1 -1;
 #X obj 73 481 bng 15 250 50 0 /mifi/\$1/save /mifi/\$1/save save 17
 7 0 10 -258113 -1 -1;
@@ -128,11 +128,13 @@ transpose 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 467 566 s /mifi/\$1/filename;
 #X obj 173 191 bng 30 250 50 0 /mifi/\$1/record /mifi/\$1/record REC
 3 15 0 10 -258113 -1 -1;
-#X obj 213 284 bng 15 250 50 0 /mifi/\$1/save /mifi/\$1/save save 17
-7 0 10 -258113 -1 -1;
+#X obj 236 285 bng 15 250 50 0 /mifi/\$1/saveas /mifi/\$1/saveas as
+17 7 0 10 -258113 -1 -1;
 #X obj 246 181 tgl 15 0 /mifi/\$1/ctl/list /mifi/\$1/ctl/list txt 0
 -6 0 8 -241291 -1 -1 0 1;
 #X obj 444 232 r /mifi/\$1/record;
+#X obj 190 285 bng 15 250 50 0 /mifi/\$1/save /mifi/\$1/save save 17
+7 0 10 -261234 -1 -1;
 #X connect 13 0 16 0;
 #X connect 14 0 13 0;
 #X connect 15 0 29 0;
