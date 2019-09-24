@@ -1,4 +1,4 @@
-#N canvas 215 58 609 361 10;
+#N canvas 215 61 609 361 10;
 #X obj 22 103 inlet;
 #X text 27 40 Needed objects to play one piano with nr <piano_nr>;
 #X text 235 273 finger command;
