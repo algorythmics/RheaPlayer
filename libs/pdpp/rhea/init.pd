@@ -1,0 +1,16 @@
+#N canvas 1634 197 541 259 10;
+#X obj 22 54 inlet;
+#X text 21 24 pdpp/rhea/init [piano nr] [rhea nr];
+#X obj 22 117 pack \$1 \$2;
+#X text 158 48 <piano nr> <rhea nr> for maping or;
+#X text 168 65 <piano nr> reinitialze <piano nr> or;
+#X text 169 78 bang for reintialize;
+#X text 21 216 (c) GPL v3 - winfried ritsch;
+#X obj 22 77 route list float bang;
+#X msg 24 151 \; /piano/\$1/notemap/rheanr \$2 \; /piano/\$1/hold/rheanr
+\$2 \; /piano/\$1/minmaxs/rheanr \$2, f 71;
+#X connect 0 0 7 0;
+#X connect 2 0 8 0;
+#X connect 7 0 2 0;
+#X connect 7 1 2 0;
+#X connect 7 2 2 0;
