@@ -1,0 +1,69 @@
+#N canvas 46 145 744 523 10;
+#X declare -path . -path abs -path lib -path data -path libs/pdpp/data
+-path libs -path libs/acre -path libs/iemlib -path iemlib -lib iemlib
+-lib zexy -lib Gem;
+#X obj 396 143 vi/screen A 1 0 0;
+#X obj 398 276 vi/screen_ctl A;
+#X obj 398 216 vi/gem_ctl;
+#X obj 111 154 vi/gem_init 25 0 0;
+#N canvas 1653 286 610 195 declares 0;
+#X text 24 31 Now in one object where first path than libs declared
+;
+#X obj 22 59 declare -path . -path abs -path lib -path data -path libs/pdpp/data
+-path libs -path libs/acre -path libs/iemlib -path iemlib -lib iemlib
+-lib zexy -lib Gem, f 70;
+#X restore 35 100 pd declares;
+#X obj 396 93 vi/screen_ds /screen;
+#X obj 396 38 vi/text_lines 1 A;
+#X obj 35 311 loadbang;
+#X obj 395 117 vi/film 1;
+#X obj 400 172 tgl 15 0 /vi/film/1/auto /vi/film/1/auto /vi/film/1/auto
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 535 151 vi/framecount;
+#X obj 535 171 s /vi/film/1/frame;
+#X obj 544 119 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 606 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 606 108 0;
+#X obj 559 38 r /vi/film/1/end;
+#X msg 559 61 0;
+#X obj 402 65 tgl 15 0 /vi/text/1/on /vi/text/1/on /vi/text/1/on 17
+7 0 10 -4034 -1 -1 0 1;
+#X obj 34 5 netreceive -u 3003;
+#X obj 35 77 s /vi/view/create;
+#X obj 82 54 s /vi/view/fullscreen;
+#X obj 183 131 s /vi/film/1/frame;
+#X obj 227 55 s /vi/text/1/on;
+#X obj 280 97 s /vi/text/1/text;
+#X obj 36 158 loadbang;
+#X obj 35 30 route screen fullscreen film frame text text/line;
+#X msg 147 81 \; /vi/film/1/start \$1 \; /vi/screen/A/on \$1;
+#X floatatom 643 120 5 0 0 0 - - -;
+#X msg 35 334 \; /vi/screen/A/w 16 \; /vi/screen/A/h 9 \; /vi/screen/A/scale
+0.45 \; /vi/screen/A/x 0 \; /vi/screen/A/y 0 \; /vi/film/1/open symbol
+media/sprachapparat.mp4;
+#X msg 179 4 send dulu;
+#X obj 266 217 vi/gem_mouse_escape;
+#X msg 36 181 \; /vi/view/devscreen 1 \; /vi/view/width 1920 \; /vi/view/height
+1080 \; /vi/view/offset_x 1366 \; /vi/view/offset_y 0 \; /vi/view/separateX
+0 \; /vi/view/fullscreen_no_intel 0 \; /vi/view/fullscreen 1 \;;
+#X connect 7 0 28 0;
+#X connect 8 0 0 0;
+#X connect 10 0 11 0;
+#X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 10 1;
+#X connect 15 0 16 0;
+#X connect 16 0 12 0;
+#X connect 16 0 10 1;
+#X connect 18 0 25 0;
+#X connect 24 0 31 0;
+#X connect 25 0 19 0;
+#X connect 25 1 20 0;
+#X connect 25 2 26 0;
+#X connect 25 3 21 0;
+#X connect 25 4 22 0;
+#X connect 25 5 23 0;
+#X connect 27 0 10 0;
+#X connect 29 0 18 0;

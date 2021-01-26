@@ -1,0 +1,7 @@
+#N canvas 1049 106 450 300 10;
+#X obj 30 29 ds/register_map \$1 /vi/screen/\$2/x;
+#X obj 31 9 ds/register_map \$1 /vi/screen/\$2/on;
+#X obj 32 131 ds/register_map \$1 /vi/screen/\$2/scale;
+#X obj 33 100 ds/register_map \$1 /vi/screen/\$2/h;
+#X obj 32 78 ds/register_map \$1 /vi/screen/\$2/w;
+#X obj 30 52 ds/register_map \$1 /vi/screen/\$2/y;

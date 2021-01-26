@@ -1,6 +1,6 @@
 #N canvas 237 66 695 637 10;
-#X obj 71 171 cnv 15 198 198 empty empty midifileplayer-\$1 2 8 0 10
--204786 -66577 0;
+#X obj 71 171 cnv 15 198 198 empty empty midifile-\$1 2 8 0 10 -204786
+-66577 0;
 #X symbolatom 74 302 32 0 0 2 file /mifi/#1/filename/show -;
 #N canvas 373 58 460 391 dt_edit 0;
 #X obj 101 101 cnv 15 198 48 empty empty velocity 2 8 0 12 -204786
@@ -74,9 +74,9 @@
 #X connect 30 0 21 0;
 #X coords 0 -1 1 1 200 50 1 100 100;
 #X restore 67 423 pd dt_edit \$1;
-#X obj 111 284 bng 15 250 50 0 /mifi/\$1/open /mifi/\$1/open open 17
-7 0 10 -262144 -1 -1;
-#X obj 247 176 tgl 15 0 /mifi/\$1/loop /mifi/\$1/loop loop -25 7 0
+#X obj 99 284 bng 15 250 50 0 /mifi/\$1/open /mifi/\$1/open open 17
+7 0 10 -4032 -1 -1;
+#X obj 216 176 tgl 15 0 /mifi/\$1/loop /mifi/\$1/loop loop -25 7 0
 10 -262144 -1 -1 0 1;
 #X obj 73 190 bng 30 250 50 0 /mifi/\$1/start /mifi/\$1/start start
 2 15 0 10 -4034 -1 -1;
@@ -85,7 +85,7 @@
 #X obj 134 190 bng 30 250 50 0 /mifi/\$1/continue /mifi/\$1/continue
 cont. 3 15 0 10 -228856 -1 -1;
 #X obj 74 236 nbx 9 14 0 1e+37 0 0 /mifi/\$1/locate /mifi/\$1/locate
-locate 0 -8 0 10 -262144 -1 -1 600000 256;
+locate 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 168 237 nbx 4 14 -1e+37 1e+37 0 0 /mifi/\$1/tempo /mifi/\$1/tempo
 tempo 0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 215 238 nbx 4 14 -1e+37 1e+37 0 0 /mifi/\$1/transpose /mifi/\$1/transpose
@@ -103,7 +103,7 @@ transpose 0 -8 0 10 -262144 -1 -1 0 256;
 #X msg 405 318 0;
 #X msg 439 316 0;
 #X obj 469 298 r \$1_mfend;
-#X obj 183 185 tgl 15 0 /mifi/\$1/ctl/v /mifi/\$1/ctl/v v_mfctl 0 -6
+#X obj 215 206 tgl 15 0 /mifi/\$1/ctl/v /mifi/\$1/ctl/v v_ctl 0 -6
 0 8 -241291 -1 -1 0 1;
 #X obj 245 207 tgl 15 0 v_mf v_mf v_mf 0 -6 0 8 -241291 -1 -1 0 1;
 #X obj 70 320 ../veltab/ctl /mifi/\$1/veltab;
@@ -111,7 +111,7 @@ transpose 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 434 277 r /mifi/\$1/stop;
 #X obj 315 236 r /mifi/\$1/continue;
 #X msg 395 364 0;
-#X obj 164 283 bng 15 250 50 0 /mifi/\$1/load /mifi/\$1/load load 17
+#X obj 143 284 bng 15 250 50 0 /mifi/\$1/load /mifi/\$1/load load 17
 7 0 10 -4034 -1 -1;
 #X obj 73 481 bng 15 250 50 0 /mifi/\$1/save /mifi/\$1/save save 17
 7 0 10 -258113 -1 -1;
@@ -126,6 +126,15 @@ transpose 0 -8 0 10 -262144 -1 -1 0 256;
 #X msg 334 546 0;
 #X msg 286 546 1;
 #X obj 467 566 s /mifi/\$1/filename;
+#X obj 173 191 bng 30 250 50 0 /mifi/\$1/record /mifi/\$1/record REC
+3 15 0 10 -258113 -1 -1;
+#X obj 236 285 bng 15 250 50 0 /mifi/\$1/saveas /mifi/\$1/saveas as
+17 7 0 10 -258113 -1 -1;
+#X obj 246 181 tgl 15 0 /mifi/\$1/ctl/list /mifi/\$1/ctl/list txt 0
+-6 0 8 -241291 -1 -1 0 1;
+#X obj 444 232 r /mifi/\$1/record;
+#X obj 190 285 bng 15 250 50 0 /mifi/\$1/save /mifi/\$1/save save 17
+7 0 10 -261234 -1 -1;
 #X connect 13 0 16 0;
 #X connect 14 0 13 0;
 #X connect 15 0 29 0;
@@ -151,4 +160,5 @@ transpose 0 -8 0 10 -262144 -1 -1 0 256;
 #X connect 39 2 40 0;
 #X connect 40 0 38 1;
 #X connect 41 0 38 1;
+#X connect 46 0 18 0;
 #X coords 0 -1 1 1 200 200 1 70 170;
