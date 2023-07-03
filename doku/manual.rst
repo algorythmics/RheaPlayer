@@ -7,15 +7,15 @@ piano player robot standard Interface
 RheaPlayer is an OS-independent Puredata application.
 
 Quickstart::
- Open the main-patch 'RheaPlayer.pd' with Pd >=0.48-1 with internal puredata library pdpp and pde and external puredata libraries iemlib, zexy and cyclone pd libraries installed.
+ Open the main-patch 'RheaPlayer.pd' with Pd >=0.50 with internal puredata library pdpp and pde and external puredata libraries iemlib, zexy and cyclone pd libraries installed.
 
 
-1.) Prerequisites
+1. Prerequisites
 -----------------
 
-- Puredata version >= 0.48-1 (see http://msp.ucsd.edu/software.html )
+- Puredata version >= 0.50 (see http://msp.ucsd.edu/software.html )
   
-  preferred Pd Vanilla Version >=0.48-1, but others should work also, if adjusting pathes, etc., too but are untestet
+  preferred Pd Vanilla Version >=0.50, but others should work also, if adjusting pathes, etc., too but are untestet
 
 - Pd libraries must have:
 
@@ -32,41 +32,41 @@ Quickstart::
 
   - acre : for data storage functionality
 
-2.) Configuration of Pd
+2. Configuration of Pd
 -----------------------
 
 If MIDI is used, configure the "Media->MIDI-Settings" in Pd and store settings (see Pd manual). 
 No other setting is needed.
 
 Note on Audio: 
-    When Audio is disabled (no ADC/DAC set), the realtime timer of the system is used for timing, which is on most computer more accurate then using the jitter of the audio interfaces for the time base. This should reduce latencies and jitter.
+    When Audio is disabled (no ADC/DAC set), the real-time timer of the system is used for timing, which is on most computer more accurate than using the jitter of the audio interfaces for the time base. This should reduce latencies and jitter.
 
-    If audio functionality for your application is needed, configure audio. If audio and "DSP on", the timing is done by the audio-driver, so the resolution depends on the audio-buffer and latency settings there. Mostly this does not do any harm. If no audio is used, the system timer, or realtime system-timer if available, of the computer isnused for the timig. Since the RheaPlayer Pd-patch is computational lightweight, there should not be any noticeable jitter above 1~ms, which for a piano with a 10~ms attack time of the hammers is more than suitable, but ... it depends on the situation.
+    If audio functionality for your application is needed, configure audio. If audio and "DSP on", the timing is done by the audio-driver, so the resolution depends on the audio-buffer and latency settings there. Mostly this does not do any harm. If no audio is used, the system timer, or realtime system-timer if available, of the computer is used for the timing. Since the RheaPlayer Pd-patch is computational lightweight, there should not be any noticeable jitter above 1~ms, which for a piano with a 10~ms attack time of the hammers is more than suitable, but ... it depends on the situation.
 
-3.) Operation
+3. Operation
 -------------
 
 network setup
 .............
 
-Attach an Ethernet Cable to rhea. Note that rhea can not detect cross-over situations, so use a crossover Ethernet-cable if your host can also no cross-over detection, very unlikely nowadays, or use a ethernet-hub.
+Attach an Ethernet Cable to rhea. Note that rhea can not detect cross-over situations, so use a crossover Ethernet-cable if your host can also no cross-over detection, very unlikely nowadays, or use an Ethernet hub.
 
-The robot player of the series "rhea"  has fixed IP addresses. For connection the number of the actual rhea, which is written on the rheas ethernet port or nearby, has  to be configured in the settings and will be stored in the 'config.txt' for next starts. 
+The robot player of the series "rhea" has fixed IP addresses. For connection the number of the actual rhea, which is written on the Rheas Ethernet port or nearby, has to be configured in the settings and will be stored in the 'config.txt' for next starts. 
 
-Configure your computers Ethernet interface with a fixed IP address in "manual" mode, choose one IP in the range of "192.168.10.1-192.168.10.127" and netmask 255.255.255.0 (example: 192.168.10.2/24). If more computer on the same network are attached, use different IP numbers for them.
+Configure your computers Ethernet interface with a fixed IP address in "manual" mode, choose one IP in the range of "192.168.10.1-192.168.10.127" and net mask 255.255.255.0 (example: 192.168.10.2/24). If more computer on the same network are attached, use different IP numbers for them.
 
 The IP of the rhea-player is '192.168.10.(128+rheanumber)' and with a reinit the connection should be activated.
 
 OSC functionality
 .................
 
-For playing the pianplayer with Opensound protocol, the UDP protocol is used. There are two ways to address the pianoplayer via the Rheaplaye Interface: as indexed piano enabling different pianos to be controlled over the same OSC connection and indirect with unaddressed MIDI notes:
+For playing the pianoplayer with open sound protocol (OSC), the UDP protocol is used. There are two ways to address the pianoplayer via the Rheaplayer Interface: as indexed piano enabling different pianos to be controlled over the same OSC connection and indirect with unaddressed MIDI notes:
 
-indexed:
+indexed::
 
   /piano/<nr>/note <note> <velocity> ... <nr> = number of piano, <note> = MIDI note number, <velocity> = MIDI velocity or noteoff if 0
   
-indirect:
+indirect::
 
  /midi/note <note> <velocity> ... <note> = MIDI note number, <velocity> = MIDI velocity or note off if 0
 
@@ -77,7 +77,7 @@ MIDI Input
 
 Use the internal MIDI-Patch mechanism of your OS, if available. On Linux for example jack-midi, on Mac OS-X core MIDI settings with IAC-bus. If using an external MIDI-device on your computer route it in the Pd and turn on MIDI on the GUI of the patch.
 
-4.) Usage of the PD pianoplayer library
+4. Usage of the PD pianoplayer library
 ---------------------------------------
 
 This Pd-Patch as application is heavily based on the pianoplayer library, which was extracted from the pianoplayer projects over the last centuries as common usage base. You can build your own Pd-application for your artwork using the libraries "pdpp" and "pde".
