@@ -1,10 +1,6 @@
 #!/bin/sh
 cd $(dirname $0)
 
-# Note: not needed anymore, since now git subtrees
-echo not needed anymore, since now git subtrees
-exit 0
-
 # 1) algorythmics libs on github
 base_path=algorythmics
 base_server=github.com

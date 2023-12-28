@@ -1,9 +1,0 @@
-#N canvas 1367 61 450 286 10;
-#X declare -path .. -path ../..;
-#X obj 50 9 declare -path .. -path ../..;
-#X obj 43 70 pdpp/ctl/button allnotesoff 65 0 64;
-#X obj 43 98 pdpp/ctl/mapping vol 66 0;
-#X obj 44 132 pdpp/ctl/notelen notelen 67 0;
-#X obj 47 161 pdpp/ctl/scaling mod 68 0 0 100 1;
-#X obj 44 188 pdpp/ctl/switch on 69 0 0 127;
-#X text 42 39 test midi controls with mapping;
