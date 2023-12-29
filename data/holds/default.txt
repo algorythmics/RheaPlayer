@@ -1,4 +1,4 @@
-hold 50;
-holdl 50;
-holdm 50;
-holdh 50;
+hold 38;
+holdl 38;
+holdm 38;
+holdh 38;

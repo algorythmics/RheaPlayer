@@ -1,4 +1,5 @@
-Parameter storage which can change for each piano or even over time.
+Calibration data storage for individual pianos:.
 
-As a default one file with name default.txt is here, but an individual one for each piano can and should be overwritten with
-own file an prefix of the rhea number: <parametersname>-<rheanumber>.txt
+for each piano with rhea player with number <rheanumber> :
+    - `notemins<rheanumber>.txt`
+    - `notemaxs<rheanumber>.txt`
