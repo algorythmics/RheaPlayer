@@ -1,4 +1,4 @@
-#N canvas 592 360 727 436 12;
+#N canvas 153 87 727 436 12;
 #X declare -path . -path abs -path data -path libs/pdpp/data -path libs -path libs/cyclone -path libs/iemlib -path cyclone -path iemlib -lib iemlib -lib zexy;
 #N canvas 1398 44 694 359 declares 0;
 #X text 16 1 --- path for Pd abstractions \, data \, libs ... ---;
@@ -15,7 +15,7 @@
 #X text 9 203 external lib paths:;
 #X text 12 263 Hint: Copy all your libraries to the libs folder;
 #X restore 44 38 pd declares;
-#N canvas 1 81 727 605 GUI 1;
+#N canvas 294 35 727 605 GUI 1;
 #X text 260 52 --- test arpeggio/note ---;
 #X obj 235 76 pdpp/iface/osc_ctl 1;
 #X obj 30 285 pdpp/noteeq/ctl 1;
@@ -172,7 +172,6 @@
 #X obj 44 268 pdpp/noteeq/map 1;
 #X obj 175 268 pdpp/noteeq/store 1;
 #X obj 43 133 pdpp/rhea/rhea 1;
-#X obj 44 400 pdpp/iface/controller;
 #X obj 44 358 pdpp/iface/midiout 1;
 #X text 126 39 Declares for patch;
 #X text 445 55 --- Interfaces ---;
@@ -219,14 +218,15 @@
 #X obj 441 314 r /mifi/1/stop;
 #X obj 566 315 r /mifi/1/end;
 #X obj 498 348 s allnotesoff;
+#X obj 44 400 pdpp/ctl/calibrator 1;
 #X connect 6 0 11 0;
-#X connect 8 0 15 0;
-#X connect 10 0 26 0;
+#X connect 8 0 14 0;
+#X connect 10 0 25 0;
 #X connect 11 0 7 0;
-#X connect 18 0 27 0;
-#X connect 19 0 21 0;
-#X connect 28 0 27 0;
-#X connect 32 0 36 0;
-#X connect 33 0 36 0;
-#X connect 34 0 36 0;
-#X connect 35 0 36 0;
+#X connect 17 0 26 0;
+#X connect 18 0 20 0;
+#X connect 27 0 26 0;
+#X connect 31 0 35 0;
+#X connect 32 0 35 0;
+#X connect 33 0 35 0;
+#X connect 34 0 35 0;

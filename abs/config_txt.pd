@@ -1,4 +1,4 @@
-#N canvas 1593 391 611 342 12;
+#N canvas 1217 496 611 342 12;
 #X text 33 9 config_txt <id>;
 #X obj 32 126 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 31 273 line 0 \, bang;
@@ -16,7 +16,7 @@
 #X obj 295 102 inlet;
 #X text 295 85 file directory as symbol;
 #X text 49 33 define a config text with receivers and values and read/write it;
-#X text 274 281 comment;
+#X obj 321 266 r #;
 #X connect 1 0 3 0;
 #X connect 2 0 9 0;
 #X connect 3 0 2 0;
